@@ -54,9 +54,13 @@ open(my $fh, '<', $photos_file) or die "Could not find any photos $!";
 while(my $p = <$fh>) {    
     if($index % 3 == 0) {        
         print '<DIV class="grid-item">';
-        print '<IMG src="'+ $p + '" class="grid-img" />';
+        print '<IMG src="';
+        print $p;
+        print '" class="grid-img" />';
         print '<DIV class="img-details">';
-        print '<A href="' + $p + '" download>';
+        print '<A href="';
+        print $p;
+        print '" download>';
         print '<BUTTON class="btn btn-light " type="button">';
         print '<i class="fa fa-download" aria-hidden="true"></i> </BUTTON> </DIV>';
         print '</A>';
@@ -75,9 +79,13 @@ HTML_BRIDGE
 while( my $f1 = <$fh>) {
     if($index % 3 == 1) {        
         print '<DIV class="grid-item">';
-        print '<IMG src="' + $f1 + '" class="grid-img" />';
+        print '<IMG src="';
+        print $f1;
+        print '" class="grid-img" />';
         print '<DIV class="img-details">';
-        print '<A href="' + $f1 + '" download>';
+        print '<A href="'; 
+        print $f1;
+        print '" download>';
         print '<BUTTON class="btn btn-light " type="button">';
         print '<i class="fa fa-download" aria-hidden="true"></i> </BUTTON> </DIV>';
         print '</A>';
@@ -96,9 +104,13 @@ HTML_BRIDGE
 while( my $f2 = <$fh>) {
     if($index % 3 == 2) {        
         print '<DIV class="grid-item">';
-        print '<IMG src="' + $f2 + '" class="grid-img" />';
+        print '<IMG src="'; 
+        print $f2;
+        print '" class="grid-img" />';
         print '<DIV class="img-details">';
-        print '<A href="' + $f2 + '" download>';
+        print '<A href="'; 
+        print $f2;
+        print '" download>';
         print '<BUTTON class="btn btn-light " type="button">';
         print '<i class="fa fa-download" aria-hidden="true"></i> </BUTTON> </DIV>';
         print '</A>';
