@@ -62,10 +62,10 @@ while(my $p = <$fh>) {
         print $p;
         print '" download>';
         print '<BUTTON class="btn btn-light " type="button">';
-        print '<i class="fa fa-download" aria-hidden="true"></i> </BUTTON> </DIV>';
+        print '<i class="fa fa-download" aria-hidden="true"></i> </BUTTON>';        
         print '</A>';
-        print '</DIV>';
-        print '</DIV>';          
+        print '</DIV>';        
+        print '</DIV>';        
     }
     $index += 1;      
 }
@@ -88,7 +88,7 @@ while( my $p1 = <$f1>) {
         print $p1;
         print '" download>';
         print '<BUTTON class="btn btn-light " type="button">';
-        print '<i class="fa fa-download" aria-hidden="true"></i> </BUTTON> </DIV>';
+        print '<i class="fa fa-download" aria-hidden="true"></i> </BUTTON>';
         print '</A>';
         print '</DIV>';
         print '</DIV>';    
@@ -114,7 +114,7 @@ while( my $p2 = <$f2>) {
         print $p2;
         print '" download>';
         print '<BUTTON class="btn btn-light " type="button">';
-        print '<i class="fa fa-download" aria-hidden="true"></i> </BUTTON> </DIV>';
+        print '<i class="fa fa-download" aria-hidden="true"></i> </BUTTON>';
         print '</A>';
         print '</DIV>';
         print '</DIV>';             
