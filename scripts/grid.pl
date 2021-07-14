@@ -4,9 +4,9 @@ use strict;
 
 use CGI qw(:all);
 my $query = new CGI();
+print "Content-Type: text/html\n\n";
 
-print "Content-Type: text/html \n\n";
-print header;
+
 print <<"HTML_START";
 <HTML>
 <HEAD>
@@ -30,7 +30,7 @@ print <<"HTML_START";
 </A>                                       
 <UL class="navbar-nav ml-auto mt-2 mt-lg-0">
 <LI class="nav-item">                   
-<A class="" href="upload.html">
+<A class="" href="/upload.html">
 <BUTTON type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#uploadImg">
 Upload &nbsp; <I class="fa fa-upload" aria-hidden="true"></I>
 </BUTTON>
