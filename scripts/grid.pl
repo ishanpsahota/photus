@@ -70,6 +70,8 @@ while(my $p = <$fh>) {
     $index += 1;      
 }
 
+$index = 0;
+
 print <<"HTML_BRIDGE";
 </DIV>
 <DIV class="grid-inner">
@@ -94,7 +96,9 @@ while( my $f1 = <$fh>) {
     }    
     $index += 1;        
 }
-    
+
+$index = 0;    
+
 print <<"HTML_BRIDGE";
 </DIV>
 <DIV class="grid-inner">
@@ -119,6 +123,8 @@ while( my $f2 = <$fh>) {
     }    
     $index += 1;           
 }
+
+$index = 0;
 
 print <<"HTML_END";
 </DIV>
