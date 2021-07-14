@@ -54,9 +54,9 @@ open(my $fh, '<', $photos_file) or die "Could not find any photos $!";
 while(my $p = <$fh>) {    
     if($index % 3 == 0) {        
         print '<DIV class="grid-item">';
-        print '<IMG src="$p" class="grid-img" />';
+        print '<IMG src="'+ $p + '" class="grid-img" />';
         print '<DIV class="img-details">';
-        print '<A href="$p" download>';
+        print '<A href="' + $p + '" download>';
         print '<BUTTON class="btn btn-light " type="button">';
         print '<i class="fa fa-download" aria-hidden="true"></i> </BUTTON> </DIV>';
         print '</A>';
@@ -72,12 +72,12 @@ print <<"HTML_BRIDGE";
 
 HTML_BRIDGE
 
-while( my $p = <$fh>) {
+while( my $f1 = <$fh>) {
     if($index % 3 == 1) {        
         print '<DIV class="grid-item">';
-        print '<IMG src="$p" class="grid-img" />';
+        print '<IMG src="' + $f1 + '" class="grid-img" />';
         print '<DIV class="img-details">';
-        print '<A href="$p" download>';
+        print '<A href="' + $f1 + '" download>';
         print '<BUTTON class="btn btn-light " type="button">';
         print '<i class="fa fa-download" aria-hidden="true"></i> </BUTTON> </DIV>';
         print '</A>';
@@ -93,12 +93,12 @@ print <<"HTML_BRIDGE";
 
 HTML_BRIDGE
 
-while( my $p = <$fh>) {
+while( my $f2 = <$fh>) {
     if($index % 3 == 2) {        
         print '<DIV class="grid-item">';
-        print '<IMG src="$p" class="grid-img" />';
+        print '<IMG src="' + $f2 + '" class="grid-img" />';
         print '<DIV class="img-details">';
-        print '<A href="$p" download>';
+        print '<A href="' + $f2 + '" download>';
         print '<BUTTON class="btn btn-light " type="button">';
         print '<i class="fa fa-download" aria-hidden="true"></i> </BUTTON> </DIV>';
         print '</A>';
@@ -130,5 +130,6 @@ Simran Kaur
 </DIV>
 </BODY>
 </HTML>
-
 HTML_END
+
+
