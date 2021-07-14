@@ -65,9 +65,9 @@ while(my $p = <$fh>) {
         print '<i class="fa fa-download" aria-hidden="true"></i> </BUTTON> </DIV>';
         print '</A>';
         print '</DIV>';
-        print '</DIV>';  
-        $index += 1;      
+        print '</DIV>';          
     }
+    $index += 1;      
 }
 
 print <<"HTML_BRIDGE";
@@ -90,9 +90,9 @@ while( my $f1 = <$fh>) {
         print '<i class="fa fa-download" aria-hidden="true"></i> </BUTTON> </DIV>';
         print '</A>';
         print '</DIV>';
-        print '</DIV>';
-        $index += 1;        
+        print '</DIV>';    
     }    
+    $index += 1;        
 }
     
 print <<"HTML_BRIDGE";
@@ -115,9 +115,9 @@ while( my $f2 = <$fh>) {
         print '<i class="fa fa-download" aria-hidden="true"></i> </BUTTON> </DIV>';
         print '</A>';
         print '</DIV>';
-        print '</DIV>';     
-        $index += 1;           
+        print '</DIV>';             
     }    
+    $index += 1;           
 }
 
 print <<"HTML_END";
