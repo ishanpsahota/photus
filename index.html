@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Photus | Photo Grid Website </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="/assets/logos/photus-d.png"; />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>        
+        <link rel="stylesheet" href="/assets/styles/style.css"; />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">        
+    </head>
+    <body>
+        <div class="container-fluid home-wrapper">            
+            <div class="row header-wrapper">
+                <nav class="navbar navbar-light bg-light w-100 ">
+                    <a class="navbar-brand" href="/">
+                        <img src="/assets/logos/photus-d.png" class="logo" />
+                    </a>                                       
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">                            
+                            <button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#uploadImg">
+                                Upload &nbsp; <i class="fa fa-upload" aria-hidden="true"></i>
+                            </button>
+                        </li>                            
+                    </ul>                                                                           
+                </nav>                            
+            </div>            
+            <div class="main-wrapper row">
+                <div class="grid-container">                                        
+                    <div class="grid-inner">
+                        <div class="grid-item">
+                            <img src="https://images.unsplash.com/photo-1536329583941-14287ec6fc4e?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwzMHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                                class="grid-img" />
+                            <div class="img-details">
+                                <div class="img-text">
+                                    <h1>
+                                        title here
+                                    </h1>
+                                </div>
+                                <a href="https://images.unsplash.com/photo-1536329583941-14287ec6fc4e?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwzMHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                    download="sunset.jpg"
+                                >
+                                    <button class="btn btn-light " type="button">
+                                        <i class="fa fa-download" aria-hidden="true"></i>
+                                    </button>                                    
+                                </a>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://images.unsplash.com/photo-1626099949720-669bdd738c55?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOXx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                                class="grid-img" />
+                        </div>                                        
+                        <div class="grid-item">
+                            <img src="https://images.unsplash.com/photo-1626125406338-1bd99df27734?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4OHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                                class="grid-img" />
+                        </div>
+                    </div>    
+                    <div class="grid-inner">
+                        <div class="grid-item">
+                            <img src="https://images.unsplash.com/photo-1626121216826-eb2f91fb1314?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5N3x8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                                class="grid-img" />
+                        </div>                                        
+                        <div class="grid-item">
+                            <img src="https://images.unsplash.com/photo-1625861269918-0f12e4df6615?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMDd8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                                class="grid-img" />
+                        </div>
+                        <div class="grid-item">
+                            <img src="https://images.unsplash.com/photo-1625864569837-691efafc5c6d?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMTB8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                                class="grid-img" />
+                        </div>
+                    </div>    
+                    <div class="grid-inner">
+                        <div class="grid-item">
+                            <img src="https://images.unsplash.com/photo-1625862225008-ed437c64837f?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMTd8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                                class="grid-img" />
+                        </div>                                            
+                        <div class="grid-item">
+                            <img src="https://images.unsplash.com/photo-1593642532009-6ba71e22f468?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxMjN8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                                class="grid-img" />
+                        </div>                                            
+                        <div class="grid-item">
+                            <img src="https://images.unsplash.com/photo-1626103989191-05f5e081e0bf?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMjR8fHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" 
+                                class="grid-img" />
+                        </div>                                            
+                        
+                    </div>                                                                
+                </div>
+            </div>        
+            <div class="footer-wrapper row">
+                <footer>
+
+                </footer>
+            </div>
+                       
+            <!-- Modal -->
+            <div class="modal fade" id="uploadImg" tabindex="-1" role="dialog" aria-labelledby="upload image" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Upload Image</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="cgi-bin/upload.pl">                                
+                                <div class="form-group">
+                                    <label for="image_upload">Image browse</label>
+                                    <input type="file" class="form-control-file" name="image" id="image_upload" 
+                                    placeholder="Choose an image to upload" aria-describedby=""
+                                    accept="image/*"
+                                    max="5000000"
+                                    >                                      
+                                </div>                                
+                                <div class="form-group">
+                                    <label for="image_title">Image title</label>
+                                    <input type="text"
+                                    class="form-control" name="image_title" id="image_title" aria-describedby="helpId" placeholder="Image title here">                                    
+                                </div>                                
+                                <button class="btn btn-success " type="submit">
+                                    Upload
+                                </button>
+                                <button class="btn btn-outline-danger" type="reset">
+                                    Reset
+                                </button>                                
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
