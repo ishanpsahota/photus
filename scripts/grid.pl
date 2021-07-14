@@ -70,23 +70,22 @@ while(my $p = <$fh>) {
     $index += 1;      
 }
 
-$index = 0;
-
 print <<"HTML_BRIDGE";
 </DIV>
 <DIV class="grid-inner">
 
 HTML_BRIDGE
 
-while( my $f1 = <$fh>) {
+$index = 0;
+while( my $p = <$fh>) {
     if($index % 3 == 1) {        
         print '<DIV class="grid-item">';
         print '<IMG src="';
-        print $f1;
+        print $p;
         print '" class="grid-img" />';
         print '<DIV class="img-details">';
         print '<A href="'; 
-        print $f1;
+        print $p;
         print '" download>';
         print '<BUTTON class="btn btn-light " type="button">';
         print '<i class="fa fa-download" aria-hidden="true"></i> </BUTTON> </DIV>';
@@ -97,23 +96,22 @@ while( my $f1 = <$fh>) {
     $index += 1;        
 }
 
-$index = 0;    
-
 print <<"HTML_BRIDGE";
 </DIV>
 <DIV class="grid-inner">
 
 HTML_BRIDGE
 
-while( my $f2 = <$fh>) {
+$index = 0;    
+while( my $p = <$fh>) {
     if($index % 3 == 2) {        
         print '<DIV class="grid-item">';
         print '<IMG src="'; 
-        print $f2;
+        print $p;
         print '" class="grid-img" />';
         print '<DIV class="img-details">';
         print '<A href="'; 
-        print $f2;
+        print $p;
         print '" download>';
         print '<BUTTON class="btn btn-light " type="button">';
         print '<i class="fa fa-download" aria-hidden="true"></i> </BUTTON> </DIV>';
@@ -124,7 +122,6 @@ while( my $f2 = <$fh>) {
     $index += 1;           
 }
 
-$index = 0;
 
 print <<"HTML_END";
 </DIV>
