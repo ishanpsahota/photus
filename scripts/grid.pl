@@ -73,7 +73,6 @@ while(my $p = <$fh>) {
 print <<"HTML_BRIDGE";
 </DIV>
 <DIV class="grid-inner">
-
 HTML_BRIDGE
 
 $index = 0;
@@ -100,12 +99,11 @@ while( my $p1 = <$f1>) {
 print <<"HTML_BRIDGE";
 </DIV>
 <DIV class="grid-inner">
-
 HTML_BRIDGE
 
 $index = 0;    
 open(my $f2, '<', $photos_file) or die "Could not find any photos $!";
-while( my $p2 = <$fh>) {
+while( my $p2 = <$f2>) {
     if($index % 3 == 2) {        
         print '<DIV class="grid-item">';
         print '<IMG src="'; 
