@@ -20,14 +20,17 @@ body {
 
 .main-wrapper {
     background-color: #ddd;
-    min-height: 50rem;
+    min-height: 45rem;
     padding: 5rem 1rem;    
 }
 
 .footer-wrapper {
     background-color: #fff;
     min-height: 4rem;
+    align-items: center;
+    padding: 1rem;
 }
+
 
 .logo {
     max-height: 2rem;
@@ -97,7 +100,35 @@ body {
     right: 0.5rem;
 }
 
+.overlay {
+    height: 100%;
+    width: 100%;    
+    background-color: rgba(10, 10, 10, 0.35);
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
+.overlay h1 {
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.background {
+    position: relative !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 50rem;
+    background-size: cover;
+    /* background: url(https://images.unsplash.com/photo-1624915422815-a7d76149d1e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80); */
+    background-image: url(https://images.unsplash.com/photo-1616964029520-6f3274003a7f?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=100);
+    background-position: center;
+}
 
 @media screen and (min-width:415px) and (max-width: 767.98px) {    
 
@@ -111,5 +142,5 @@ body {
     .grid-container {
         grid-template-columns: repeat(3, 1fr);         
         width: 80%;               
-    }
+    }  
 }
