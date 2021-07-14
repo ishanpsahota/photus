@@ -126,6 +126,7 @@ while( my $p2 = <$f2>) {
 print <<"HTML_END";
 </DIV>
 </DIV>
+</DIV>
 <DIV class="footer-wrapper row text-center text-md-left d-flex flex-column flex-md-row">                
 <H4>
 Photus

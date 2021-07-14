@@ -21,7 +21,7 @@
                     </a>                                       
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">    
-                            <a href="/grid.html">
+                            <a href="/cgi-bin/grid.pl">
                                 <button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#uploadImg">
                                     <i class="fa fa-arrow-left" aria-hidden="true"></i> &nbsp; Back to Grid  
                                 </button>
@@ -34,7 +34,7 @@
             <div class="main-wrapper row d-flex flex-column">
                 <div class="col-12 col-md-6 m-auto">
                     <div class="card py-5 px-3 text-center    ">
-                        <form action="cgi-bin/upload.pl" enctype = "multipart/form-data">                                
+                        <form action="/cgi-bin/upload.pl" method="post" enctype="multipart/form-data">                                
                             <div class="form-group">
                                 <label for="image_upload" class="h1">Image browse</label>
                                 <input type="file" class="form-control-file" name="image" id="image_upload" 
