@@ -2,17 +2,10 @@
 
 use strict;
 
-# my $photos_file = "/home/stud1034/apacheSSL/cgi-bin/photos";
-my $photos_file = "/home/stud1034/downloads/photus/scripts/photos.txt";
-my $index = 0;
+use CGI qw(:all);
+my $query = new CGI();
 
-open(my $fh, '<', $photos_file) or die "Could not find any photos $!";
-
-#while (my $p = <$fh>) {
-#    chomp $p;
-#    print "$p\n"
-#}
-
+print "Content-Type: text/html \n\n";
 print header;
 print <<HTML_START;
 <HTML>
@@ -50,6 +43,13 @@ print <<HTML_START;
                 <DIV class="grid-container">
                     <DIV class="grid-inner">
 HTML_START
+
+
+my $photos_file = "/home/stud1034/apacheSSL/cgi-bin/photos.txt";
+my $index = 0;
+
+open(my $fh, '<', $photos_file) or die "Could not find any photos $!";
+
 
 while(my $p = <$fh>) {    
     if($index % 3 == 0) {        
