@@ -10,9 +10,8 @@ body {
     position: relative;
 }
 
-.header-wrapper {    
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);    
-    box-shadow: 0px 1px 10px 2px rgba(10, 10, 10, 15%);
+.header-wrapper {
+    box-shadow: 0px 1px 10px 2px rgb(10 10 10 / 25%);
     position: fixed;
     z-index: 10;
     width: 100%;
@@ -29,12 +28,6 @@ body {
     min-height: 4rem;
     align-items: center;
     padding: 1rem;
-}
-
-
-.logo {
-    max-height: 2rem;
-    width: auto;
 }
 
 .grid-container {
@@ -107,11 +100,12 @@ body {
 .overlay {
     height: 100%;
     width: 100%;    
-    background-color: rgba(10, 10, 10, 0.35);
+    background-color: rgba(10, 10, 50, 0.35);
     z-index: 5;
     position: absolute;
     top: 0;
     left: 0;
+    backdrop-filter: saturate(1.8) blur(15px);
 }
 
 .overlay h1 {
@@ -125,14 +119,65 @@ body {
 
 .background {
     position: relative !important;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat !important;
     background-attachment: fixed;
     min-height: 50rem;
     background-size: cover;
     /* background: url(https://images.unsplash.com/photo-1624915422815-a7d76149d1e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80); */
-    background-image: url(https://images.unsplash.com/photo-1616964029520-6f3274003a7f?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=100);
+    /* Alt backgrounds:
+        photo-1616964029520-6f3274003a7f
+        photo-1540175837026-c00e5be3177c
+     */
+    background: url(https://images.unsplash.com/photo-1503776768674-0e612f631345?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2650&q=80);
     background-position: center;
+    background-color: #000;
 }
+
+/* BEGIN Custom Bootstrap CSS */
+
+.navbar.bg-dark {
+    background-color: rgb(0 0 0 / 72%) !important;
+    backdrop-filter: saturate(1.8) blur(20px) !important;
+}
+
+.navbar-nav .btn {
+    padding: .2rem .4rem .2rem .4rem;
+    min-width: 5rem;
+    border-radius: 0;
+}
+
+ul.navbar-nav li:only-child .btn {
+     border-radius: 50px;
+}
+
+.navbar-nav .btn-outline-primary {
+    color: #3575ba;
+    border-color: #3575ba;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    min-width: 7rem;
+}
+
+.navbar-nav .btn-outline-primary:hover {
+    color: #efefef;
+    background-color: #295482;
+    border-color: #295482;
+}
+
+.navbar-nav .btn-outline-dark {
+    color: #b7bbbe;
+    border-color: #6a7276;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.navbar-nav .btn-outline-dark:hover {
+    color: #d3d3d3;
+    background-color: #0a0a0a;
+    border-color: #363636;
+}
+
+/* END Custom Bootstrap CSS */
 
 @media screen and (min-width:415px) and (max-width: 767.98px) {    
 
