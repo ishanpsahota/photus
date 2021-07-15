@@ -11,14 +11,13 @@ body {
 }
 
 .header-wrapper {
-    box-shadow: 0px 1px 10px 2px rgb(10 10 10 / 25%);
     position: fixed;
     z-index: 10;
     width: 100%;
 }
 
 .main-wrapper {
-    background-color: #ddd;
+    background-color: #f0f2f7;
     min-height: 45rem;
     padding: 5rem 1rem;    
 }
@@ -28,6 +27,12 @@ body {
     min-height: 4rem;
     align-items: center;
     padding: 1rem;
+    border-top: 1px solid #e2e6ef;
+}
+
+/* Hide the border if previous element is a hero */
+.main-wrapper.row.background + .footer-wrapper {
+    border-top-color: transparent;
 }
 
 .grid-container {
@@ -142,6 +147,17 @@ body {
 
 .navbar.bg-dark {
     background-color: rgb(0 0 0 / 72%) !important;
+    box-shadow: 0px 1px 10px 2px rgb(10 10 10 / 25%);
+}
+
+.navbar.bg-light {
+    background-color: rgb(255 255 255 / 60%) !important;
+    box-shadow: 0px 1px 10px 2px rgb(10 10 10 / 5%);
+    border-bottom: 1px solid #e2e6ef;
+}
+
+.navbar.bg-dark,
+.navbar.bg-light {
     backdrop-filter: saturate(1.8) blur(20px) !important;
 }
 
@@ -202,7 +218,7 @@ ul.navbar-nav li:only-child .btn {
 @media only screen and (max-width: 500px) {
     .navbar-nav .btn-outline-primary,
     .navbar-nav .btn-outline-dark {
-        border-radius: 0;
+        border-radius: 0 !important;
         min-width: 2.5rem;
     }
 }
