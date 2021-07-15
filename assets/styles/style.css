@@ -135,6 +135,11 @@ body {
 
 /* BEGIN Custom Bootstrap CSS */
 
+/* Fixes navbar button displacement at a certain window size */
+.navbar-nav.mt-2 {
+    margin-top: 0 !important;
+}
+
 .navbar.bg-dark {
     background-color: rgb(0 0 0 / 72%) !important;
     backdrop-filter: saturate(1.8) blur(20px) !important;
