@@ -198,3 +198,11 @@ ul.navbar-nav li:only-child .btn {
         width: 80%;               
     }  
 }
+
+@media only screen and (max-width: 500px) {
+    .navbar-nav .btn-outline-primary,
+    .navbar-nav .btn-outline-dark {
+        border-radius: 0;
+        min-width: 2.5rem;
+    }
+}
