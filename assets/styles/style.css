@@ -195,15 +195,21 @@ ul.navbar-nav li:only-child .btn {
     border-color: #6a7276;
 }
 
+.navbar.bg-dark .btn-outline-dark:hover {
+    color: #d3d3d3;
+    background-color: #0a0a0a;
+    border-color: #363636;
+}
+
 .navbar.bg-light .btn-outline-dark {
     color: #2e2e2e;
     border-color: #646464;
 }
 
-.navbar-nav .btn-outline-dark:hover {
-    color: #d3d3d3;
-    background-color: #0a0a0a;
-    border-color: #363636;
+.navbar.bg-light .btn-outline-dark:hover {
+    color: #efefef;
+    background-color: #343a40;
+    border-color: #343a40;
 }
 
 /* The spacing between the text and icon */
