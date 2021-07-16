@@ -186,10 +186,18 @@ ul.navbar-nav li:only-child .btn {
 }
 
 .navbar-nav .btn-outline-dark {
-    color: #b7bbbe;
-    border-color: #6a7276;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
+}
+
+.navbar.bg-dark .btn-outline-dark {
+    color: #b7bbbe;
+    border-color: #6a7276;
+}
+
+.navbar.bg-light .btn-outline-dark {
+    color: #2e2e2e;
+    border-color: #646464;
 }
 
 .navbar-nav .btn-outline-dark:hover {
