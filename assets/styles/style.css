@@ -162,7 +162,7 @@ body {
 }
 
 .navbar-nav .btn {
-    padding: .2rem .4rem .2rem .4rem;
+    padding: .2rem .9rem .2rem .9rem;
     min-width: 5rem;
     border-radius: 0;
 }
@@ -198,6 +198,11 @@ ul.navbar-nav li:only-child .btn {
     border-color: #363636;
 }
 
+/* The spacing between the text and icon */
+.nav-item button span:not(:only-child) {
+    margin-right: .4rem;
+}
+
 /* END Custom Bootstrap CSS */
 
 @media screen and (min-width:415px) and (max-width: 767.98px) {    
@@ -220,5 +225,7 @@ ul.navbar-nav li:only-child .btn {
     .navbar-nav .btn-outline-dark {
         border-radius: 0 !important;
         min-width: 2.5rem;
+        padding-right: .4rem;
+        padding-left: .4rem;
     }
 }
