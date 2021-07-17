@@ -66,13 +66,13 @@ while(my $p = <$fh>) {
     print '<DIV class="form-check form-check-inline">';
     print '<LABEL class="form-check-label m-1 btn btn-primary">';
     print '<INPUT class="form-check-input" type="radio" name="allow" id="allow_radio_true" value="true">';
-    print '<SPAN class=""> Allow <i class="fa fa-check" aria-hidden="true"></i> </SPAN> </LABEL>';
-    print '<LABEL class="form-check-label m-1 btn btn-outline-danger">'
-    print '<INPUT class="form-check-input" type="radio" name="allow" id="allow_radio_false" value="false"> '
-    print '<SPAN class="">Reject <i class="fa fa-times" aria-hidden="true"></i></SPAN> </LABEL>'
+    print '<SPAN class=""> Allow <I class="fa fa-check" aria-hidden="true"></I> </SPAN> </LABEL>';
+    print '<LABEL class="form-check-label m-1 btn btn-outline-danger">';
+    print '<INPUT class="form-check-input" type="radio" name="allow" id="allow_radio_false" value="false"> ';
+    print '<SPAN class="">Reject <I class="fa fa-times" aria-hidden="true"></I></SPAN> </LABEL>';
     print '<INPUT type="hidden" name="image" value="';
     print $p;
-    print '" /> </DIV> </DIV>'
+    print '" /> </DIV> </DIV>';
     print '<DIV class="form-group"> <BUTTON type="submit" class="btn btn-dark">Submit</BUTTON> </DIV>';
     print '</FORM> </DIV></DIV>';    
 }
