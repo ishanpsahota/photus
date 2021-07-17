@@ -8,44 +8,44 @@ print "Content-Type: text/html\n\n";
 
 
 print <<"HTML_START";
-<html>
-<head>
-<title> Home | Admin | Photo Grid Website </title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="/assets/logos/photus-d.png"; />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>        
-<link rel="stylesheet" href="/assets/styles/style.css"; />
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">        
-</head>
-<body>
-<div class="container-fluid home-wrapper">            
-<div class="row header-wrapper">
-<nav class="navbar navbar-light bg-light w-100 ">
-<a class="navbar-brand" href="/admin/home.html">
-<img src="/assets/logos/photus-d.png" class="logo" />
-</a>    
-<strong class="mx-auto">
+<HTML>
+<HEAD>
+<TITLE> Home | Admin | Photo Grid Website </title>
+<META charset="utf-8">
+<META name="viewport" content="width=device-width, initial-scale=1">
+<LINK rel="icon" href="/assets/logos/photus-d.png"; />
+<LINK rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<SCRIPT src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></SCRIPT>
+<SCRIPT src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></SCRIPT>
+<SCRIPT src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></SCRIPT>        
+<LINK rel="stylesheet" href="/assets/styles/style.css"; />
+<LINK rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">        
+</HEAD>
+<BODY>
+<DIV class="container-fluid home-wrapper">            
+<DIV class="row header-wrapper">
+<NAV class="navbar navbar-light bg-light w-100 ">
+<A class="navbar-brand" href="/admin/home.html">
+<IMG src="/assets/logos/photus-d.png" class="logo" />
+</A>    
+<STRONG class="mx-auto">
 Admin Panel
-</strong>                                                                   
-<div class="btn-group">
-<button class="btn btn-dark dropdown-toggle" type="button" id="admin_nav_menu" data-toggle="dropdown" aria-haspopup="true"
+</STRONG>                                                                   
+<DIV class="btn-group">
+<BUTTON class="btn btn-dark dropdown-toggle" type="button" id="admin_nav_menu" data-toggle="dropdown" aria-haspopup="true"
 aria-expanded="false">
 Menu 
-</button>
-<div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="admin_nav_menu">
-<a class="dropdown-item" href="services.html">Services </a>                            
-<a class="dropdown-item" href="/grid.html">Grid </a>                            
-</div>
-</div>
+</BUTTON>
+<DIV class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="admin_nav_menu">
+<A class="dropdown-item" href="services.html">Services </A>       
+<A class="dropdown-item" href="/grid.html">Grid </A>                            
+</DIV>
+</DIV>
 </nav>                            
-</div>            
-<div class="main-wrapper row text-center">
-<h1 class="display-2 mx-auto my-1"> Grid </h1>
-<div class="card-columns col-12">
+</DIV>            
+<DIV class="main-wrapper row text-center">
+<H1 class="display-2 mx-auto my-1"> Grid </H1>
+<DIV class="card-columns col-12">
 HTML_START
 
 
@@ -55,28 +55,26 @@ my $index = 0;
 open(my $fh, '<', $photos_file) or die "Could not find any photos $!";
 
 
-while(my $p = <$fh>) {   
-    if(length($p) > 0) {
-        print '<div class="card card-grid-item">';
-        print '<img class="card-img-top" src="';
-        print $p;
-        print '" alt="image"/>';
-        print '<div class="card-body text-center">';
-        print '<form action="/cgi-bin/approve.cgi" method="POST">';
-        print '<div class="form-group">';
-        print '<div class="form-check form-check-inline">';
-        print '<label class="form-check-label m-1 btn btn-primary">';
-        print '<input class="form-check-input" type="radio" name="allow" id="allow_radio_true" value="true">';
-        print '<span class=""> Allow <i class="fa fa-check" aria-hidden="true"></i> </span> </label>';
-        print '<label class="form-check-label m-1 btn btn-outline-danger">'
-        print '<input class="form-check-input" type="radio" name="allow" id="allow_radio_false" value="false"> '
-        print '<span class="">Reject <i class="fa fa-times" aria-hidden="true"></i></span> </label>'
-        print '<input type="hidden" name="image" value="';
-        print $p;
-        print '" /> </div> </div>'
-        print '<div class="form-group"> <button type="submit" class="btn btn-dark">Submit</button> </div>';
-        print '</form> </div></div>';
-    }
+while(my $p = <$fh>) {  
+    print '<DIV class="card card-grid-item">';
+    print '<IMG class="card-img-top" src="';
+    print $p;
+    print '" alt="image"/>';
+    print '<DIV class="card-body text-center">';
+    print '<FORM action="/cgi-bin/approve.cgi" method="POST">';
+    print '<DIV class="form-group">';
+    print '<DIV class="form-check form-check-inline">';
+    print '<LABEL class="form-check-label m-1 btn btn-primary">';
+    print '<INPUT class="form-check-input" type="radio" name="allow" id="allow_radio_true" value="true">';
+    print '<SPAN class=""> Allow <i class="fa fa-check" aria-hidden="true"></i> </SPAN> </LABEL>';
+    print '<LABEL class="form-check-label m-1 btn btn-outline-danger">'
+    print '<INPUT class="form-check-input" type="radio" name="allow" id="allow_radio_false" value="false"> '
+    print '<SPAN class="">Reject <i class="fa fa-times" aria-hidden="true"></i></SPAN> </LABEL>'
+    print '<INPUT type="hidden" name="image" value="';
+    print $p;
+    print '" /> </DIV> </DIV>'
+    print '<DIV class="form-group"> <BUTTON type="submit" class="btn btn-dark">Submit</BUTTON> </DIV>';
+    print '</FORM> </DIV></DIV>';    
 }
 
 print <<"HTML_END";
