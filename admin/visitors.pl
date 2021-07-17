@@ -66,7 +66,7 @@ print <<"HTML_BRIDGE";
 <THEAD class="thead-inverse">
 <TR` class="">
 <TH>IP Address</TH>
-<TH> Date &nbsp; <i class="fa fa-calendar" aria-hidden="true"></i> </TH>
+<TH> Date &nbsp; <I class="fa fa-calendar" aria-hidden="true"></I> </TH>
 <TH> File accessed </TH>
 </TR>
 </THEAD>
@@ -85,7 +85,7 @@ while( <FILE> ) {
             print '<TD>', @tempor ,'</TD>';
 
             if( $array[6] eq "/" ){
-                print "<TD> <code> index.html </code> </TD>\n";
+                print "<TD> <CODE> index.html </CODE> </TD>\n";
             }
             else {
                 print "<TD>", $array[6], "</TD>\n";
