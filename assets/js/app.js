@@ -57,9 +57,21 @@ class ImageUploader {
   addFile(e) {
     const files = e.currentTarget.files;
 
-    // In case the user presses "Cancel" in the browser dialog
-    if (files.length == 0)
+    // Proceed no further in case the user presses "Cancel" in the browser dialog
+    //
+    /* Chromium bug: https://bugs.chromium.org/p/chromium/issues/detail?id=2508
+     * Selecting a file, then opening the browser dialog again and pressing
+     * "Cancel" will clear the file input. Firefox does not exhibit this
+     * behaviour. Behaviour on Safari is untested.
+     */
+    if (files.length == 0) {
+      if (!!window.chrome) {
+        this.resetList(false);
+        return;
+      }
+
       return;
+    }
 
     if (this.listNotEmpty())
       this.resetList(false);
