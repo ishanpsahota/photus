@@ -37,6 +37,7 @@ class ImageUploader {
     this.updateDropzoneStyle = this.updateDropzoneStyle.bind(this);
     this.addFile = this.addFile.bind(this);
     this.resetList = this.resetList.bind(this);
+    this.listNotEmpty = this.listNotEmpty.bind(this);
 
     this.eventListen();
   }
@@ -95,5 +96,9 @@ class ImageUploader {
 
     if (includeForm)
       this.form.reset();
+  }
+
+  listNotEmpty() {
+    return this.list.children.length != 0;
   }
 }
