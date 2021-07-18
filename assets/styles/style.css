@@ -11,6 +11,9 @@ body {
     background-color: #f0f2f7;
 }
 
+/* Accessibility? Lol, cry me a river */
+button:focus { outline: 0; }
+
 .header-wrapper {
     position: fixed;
     z-index: 10;
@@ -139,8 +142,6 @@ body {
     background-color: #000;
 }
 
-/* BEGIN Custom Bootstrap CSS */
-
 /* Fixes navbar button displacement at a certain window size */
 .navbar-nav.mt-2 {
     margin-top: 0 !important;
@@ -218,8 +219,180 @@ ul.navbar-nav li:only-child .btn {
     margin-right: .4rem;
 }
 
-/* END Custom Bootstrap CSS */
 
+/* Image upload form
+------------------------------------------------------------------------------*/
+.upload-card {
+    background-color: #fff;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px !important;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px 5px rgb(223 227 238 / 35%);
+}
+
+#upload-form .dropzone {
+    position: relative;
+    padding: 55px 70px;
+    border: 2px dashed #bdcddd;
+    border-radius: 15px;
+    letter-spacing: 0.1rem;
+    user-select: none;
+    transition: background-color .2s linear, border-color .2s linear;
+}
+
+#upload-form .dropzone [type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* HACK JOB */
+::-webkit-file-upload-button {
+    cursor: pointer;
+}
+
+#upload-form .dropzone.active {
+    background-color: #f9fcff;
+    border-color: #75afff;
+}
+
+#upload-form .dropzone label:last-child {
+    margin-bottom: 0;
+}
+
+#upload-form .dropzone label.instruction,
+#upload-form .dropzone label.support {
+    display: block;
+}
+
+#upload-form .dropzone label.instruction {
+    font-weight: bold;
+    color: #295a8a;
+    letter-spacing: .1rem;
+}
+
+#upload-form .dropzone label.support {
+    color: #8da7c2;
+    letter-spacing: .07rem;
+}
+
+#upload-form .dropzone-icon {
+    display: block;
+    width: 100%;
+    height: 70px;
+    margin-bottom: 1.5rem;
+    transition: transform .2s linear, filter .2s linear;
+}
+
+#upload-form .dropzone-icon.active {
+    transform: translateY(-15%);
+    filter: drop-shadow(0px 13px 8px rgba(0, 90, 255, .21));
+}
+
+#upload-form .dropzone-link
+{
+    color: #175fd6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#upload-form .file-display {
+    display: none;
+    margin: 0;
+    margin-top: 1.3rem;
+    padding: 1.3rem;
+    border: 2px solid #eef3fa;
+    border-radius: 6px;
+    text-align: left;
+    background: #f7fafd;
+}
+
+#upload-form .file {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#upload-form .file + .file {
+    margin-top: 1rem;
+}
+
+#upload-form .file-image {
+    display: block;
+    max-width: 128px;
+    margin: auto;
+}
+
+#upload-form .file-info {
+    flex: 1 1 auto;
+    text-align: left;
+    overflow: hidden;
+}
+
+#upload-form .file-name {
+    position: relative;
+    padding-right: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #465769;
+}
+
+#upload-form .file-name strong {
+    padding-right: 8px;
+    color:#295a8a;
+    cursor: default;
+    user-select: none;
+}
+
+#upload-form .file-action {
+    display: inline;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    outline: none;
+    text-align: right;
+    background-color: #e5edf5;
+    transition: background-color .1s linear;
+    cursor: pointer;
+}
+
+#upload-form .file-action:hover {
+   background-color: #dce7f1;
+}
+
+#upload-form .file-action:active {
+    background-color: #d3e1ed;
+}
+
+#upload-form .file-action + .file-action {
+    margin-left: 10px;
+}
+
+#upload-form .file-action [class^="fa-"],
+#upload-form .file-action [class*=" fa-"] {
+    width: 100%;
+    margin-top: -5px;
+    text-align:center;
+    vertical-align: middle;
+    color: #295a8a;
+}
+
+
+/* Media Queries
+------------------------------------------------------------------------------*/
 @media screen and (min-width:415px) and (max-width: 767.98px) {    
 
     .grid-inner {
