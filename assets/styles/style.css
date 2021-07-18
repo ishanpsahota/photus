@@ -214,16 +214,15 @@ ul.navbar-nav li:only-child .btn {
     border-color: #343a40;
 }
 
-/* The spacing between the text and icon if text comes first */
-.nav-item button span:first-of-type:not(:only-child) {
+/* The spacing between the text and icon */
+.nav-item button span:first-child:not(:only-child) {
     margin-right: .4rem;
 }
 
 /* The spacing between the text and icon if icon comes first */
-.nav-item button span:last-of-type:not(:only-child) {
+.nav-item button span:last-child:not(:only-child) {
     margin-left: .4rem;
 }
-
 
 /* Image upload form
 ------------------------------------------------------------------------------*/
