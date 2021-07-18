@@ -63,7 +63,7 @@ class ImageUploader {
     if (files.length == 0)
       return;
 
-    if (this.form.children.length > 0)
+    if (this.listNotEmpty())
       this.resetList(false);
 
     // SECURITY WARNING: THIS CAN BE SPOOFED BY EXT CHANGE
