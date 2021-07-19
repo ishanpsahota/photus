@@ -26,4 +26,4 @@ while(<$file_handle>) {
  close($file_handle);                        
  close(LOCAL);                    
  print $q->header();
- print "<p> File upload successful. Go <a href='/grid.html'> back </a> to grid.";
+ print "<p> File upload successful. Go <a href='/grid.shtml'> back </a> to grid.";

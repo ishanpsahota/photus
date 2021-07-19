@@ -10,7 +10,7 @@ print "Content-Type: text/html\n\n";
 print <<"HTML_START";
 <HTML>
 <HEAD>
-<TITLE> Photus | Photo Grid Website </TITLE>
+<TITLE> Grid | Photus | Photo Grid Website </TITLE>
 <META charset="utf-8">
 <META name="viewport" content="width=device-width, initial-scale=1">
 <LINK rel="icon" href="/assets/logos/photus-d.png"; />
@@ -24,20 +24,27 @@ print <<"HTML_START";
 <BODY>
 <DIV class="container-fluid home-wrapper">            
 <DIV class="row header-wrapper">
-<NAv class="navbar navbar-light bg-light w-100 ">
-<A class="navbar-brand" href="/">
-<IMG src="/assets/logos/photus-d.png" class="logo" />
-</A>                                       
-<UL class="navbar-nav ml-auto mt-2 mt-lg-0">
-<LI class="nav-item">                   
-<A class="" href="/upload.html">
-<BUTTON type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#uploadImg">
-Upload &nbsp; <I class="fa fa-upload" aria-hidden="true"></I>
-</BUTTON>
-</A>                                     
-</LI>                            
-</UL>                                                                           
-</NAV>                            
+<nav class="navbar bg-light w-100 ">
+<a class="navbar-brand" href="/">
+<svg viewBox="0 0 31 45" width="32px" height="32px"><path d="M15.5,0A15.5,15.5,0,0,0,0,15.5H0V43.3A1.7,1.7,0,0,0,1.7,45h.364a1.7,1.7,0,0,0,1.7-1.7V25.6A15.5,15.5,0,1,0,15.5,0Zm0,27.242A11.742,11.742,0,1,1,27.242,15.5,11.742,11.742,0,0,1,15.5,27.242Z" fill="#303952"/><path d="M13.053,14.088,17.537,6.32A9.325,9.325,0,0,0,9.552,8.211L13,14.182Z" fill="#303952"/><path d="M12.239,15.5,8.569,9.148A9.374,9.374,0,0,0,6.089,15.5a9.474,9.474,0,0,0,.189,1.882h7.048Z" fill="#303952"/><path d="M24.478,12.677A9.431,9.431,0,0,0,18.836,6.71l-3.444,5.967Z" fill="#303952"/><path d="M24.723,13.618H17.674l.273.47,4.484,7.764a9.376,9.376,0,0,0,2.48-6.352A9.549,9.549,0,0,0,24.723,13.618Z" fill="#303952"/><path d="M17.128,18.323l-3.67,6.357a9.336,9.336,0,0,0,7.99-1.891L18,16.817Z" fill="#303952"/><path d="M6.522,18.323a9.431,9.431,0,0,0,5.642,5.967l3.444-5.967Z" fill="#303952"/></svg>
+</a>                                       
+<ul class="navbar-nav ml-auto list-group-horizontal mt-2 mt-lg-0">
+<li class="nav-item mx-1">                   
+<a href="/">
+<button type="button" class="btn btn-outline-dark">
+<span>Home</span><i class="fa fa-home" aria-hidden="true"></i>
+</button>
+</a>                                     
+</li> 
+<li class="nav-item mx-1">                   
+<a class="" href="/upload.html">
+<button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#uploadImg">
+<span>Upload</span><i class="fa fa-upload" aria-hidden="true"></i>
+</button>
+</a>                                     
+</li>                             
+</ul>                                                                           
+</nav>                                              
 </DIV>            
 <DIV class="main-wrapper row">
 <DIV class="grid-container">
@@ -144,6 +151,7 @@ Simran Kaur
 </UL>                
 </DIV>                                            
 </DIV>
+<script src="/assets/js/app.js" charset="utf-8"></script>
 </BODY>
 </HTML>
 HTML_END
