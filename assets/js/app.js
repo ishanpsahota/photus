@@ -76,13 +76,21 @@ class ImageUploader {
     if (this.listNotEmpty())
       this.resetList(false);
 
-    // SECURITY WARNING: THIS CAN BE SPOOFED BY EXT CHANGE
-    if (!/^image\/jpeg|jpg|png/.test(files[0].type)) {
-      this.form.reset();
-      return;
-    }
+    // SECURITY CRITICAL: THIS CAN BE SPOOFED BY EXT CHANGE
+    // if (!/^image\/jpeg|jpg|png/.test(files[0].type)) {
+    //   this.form.reset();
+    //   return;
+    // }
 
-    this.addToList(files[0]);
+    let sig = new ImageSignature(files[0]);
+    sig.sniff(8, (result) => {
+      if (result == "image/jpeg" || result == "image/png") {
+        this.addToList(sig.blob);
+      } else {
+        this.form.reset();
+        // console.log("Someone's feeling sneaky: " + sig.blob.type);
+      }
+    });
   }
 
   addToList(file) {
@@ -110,5 +118,56 @@ class ImageUploader {
 
   listNotEmpty() {
     return this.list.children.length != 0;
+  }
+}
+
+class ImageSignature {
+  constructor(blob) {
+    this.blob = blob;
+
+    // https://mimesniff.spec.whatwg.org/#matching-an-image-type-pattern
+    this.data = [
+      {
+          mediaType: "image/jpeg",
+          bytePattern: [0xff, 0xd8, 0xff],
+          patternMask: [0xff, 0xff, 0xff]
+      },
+      {
+          mediaType: "image/png",
+          bytePattern: [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a],
+          patternMask: [0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff]
+      }
+    ];
+  }
+
+  match(bytes, sig) {
+    // https://mimesniff.spec.whatwg.org/#matching-a-mime-type-pattern
+    // No bytes to be ignored
+    for (let p = 0; p < sig.patternMask.length; p++) {
+      if ((bytes[p] & sig.patternMask[p]) - sig.bytePattern[p] !== 0)
+          return false;
+    }
+
+    return true;
+  }
+
+  sniff(maxBytesRead, callback) {
+    let reader = new FileReader();
+    let that = this;
+
+    reader.onloadend = function(e) {
+      if (e.target.readyState !== FileReader.DONE)
+        return;
+
+      const buff = (new Uint8Array(e.target.result));
+      for (let i = 0; i < that.data.length; i++) {
+        if (that.match(buff, that.data[i])) {
+          callback(that.data[i].mediaType);
+          return;
+        }
+      }
+      return callback("unrecognized");
+    }
+    reader.readAsArrayBuffer(this.blob.slice(0, maxBytesRead));
   }
 }
