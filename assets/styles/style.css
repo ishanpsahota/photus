@@ -404,10 +404,6 @@ ul.navbar-nav li:only-child .btn {
     color: #295a8a;
 }
 
-
-/* Media Queries
-------------------------------------------------------------------------------*/
-
 .admin_background {
     position: relative !important;
     background-repeat: no-repeat;
@@ -439,6 +435,9 @@ ul.navbar-nav li:only-child .btn {
 
 }
 
+
+/* Media Queries
+------------------------------------------------------------------------------*/
 @media screen and (min-width: 677px) {
     
 }
