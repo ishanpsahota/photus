@@ -20,8 +20,9 @@ button:focus { outline: 0; }
     width: 100%;
 }
 
-.main-wrapper {
-    min-height: 45rem;
+.main-wrapper {    
+    background-color: #ddd;
+    min-height: 45rem;    
     padding: 5rem 1rem;    
 }
 
@@ -116,14 +117,20 @@ button:focus { outline: 0; }
     backdrop-filter: saturate(1.8) blur(15px);
 }
 
-.overlay h1 {
+.overlay .inner {
     position: absolute;
     color: #fff;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
+
+/* .overlay div {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -60%); */
+/* } */
 
 .background {
     position: relative !important;
@@ -265,6 +272,7 @@ ul.navbar-nav li:only-child .btn {
     cursor: pointer;
 }
 
+
 #upload-form .dropzone.active {
     background-color: #f9fcff;
     border-color: #75afff;
@@ -397,11 +405,63 @@ ul.navbar-nav li:only-child .btn {
 
 /* Media Queries
 ------------------------------------------------------------------------------*/
+
+.admin_background {
+    position: relative !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 50rem;
+    background-size: cover;
+    /* background: url(https://images.unsplash.com/photo-1624915422815-a7d76149d1e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80); */
+    background-image: url(https://images.unsplash.com/photo-1596787071138-308550420028?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80);
+    background-position: center;
+}
+
+.card-img-top {
+    /* max-width: 100%; */
+    /* max-height: 25rem; */
+    /* width: auto; */
+    height: auto;
+    width: auto;
+    max-width: 100%;
+}
+
+.card-grid {
+    /* padding: 2rem 1rem; */
+    column-count: 1;        
+    /* padding: 0; */
+}
+
+.card-grid-item {
+    /* margin: 0.5rem 0.25rem;     */
+
+}
+
+@media screen and (min-width: 677px) {
+    
+}
+
+@media screen and (max-width: 676.99px) {
+    .card-columns {
+        column-count: 1;
+    }
+
+    .card-grid-item {
+        margin: 0.5rem 0;
+    }
+    
+}
+
 @media screen and (min-width:415px) and (max-width: 767.98px) {    
 
     .grid-inner {
         grid-template-columns: 1fr;
         grid-gap: 1rem;
+    }
+
+    .card-grid-item {
+        max-width: 80%;
+        margin: 0.5rem auto;
     }
 }
 
@@ -410,6 +470,20 @@ ul.navbar-nav li:only-child .btn {
         grid-template-columns: repeat(3, 1fr);         
         width: 80%;               
     }  
+
+    .card-grid {
+        column-count: 3;
+    }
+
+    .card-grid-item {
+        max-width: 85%;
+        margin: auto;
+    }
+
+    .card-img-top {
+        max-height: 25rem;
+        width: auto;
+    }
 }
 
 @media only screen and (max-width: 500px) {
