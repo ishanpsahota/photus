@@ -21,13 +21,11 @@
                     </a>                                       
                     <ul class="navbar-nav ml-auto list-group-horizontal mt-2 mt-lg-0">
                         <li class="nav-item mx-1">                   
-                            <!-- <a class="" href="grid.html"> -->
-                            <form action="/cgi-bin/grid.pl">
-                                <button type="submit" class="btn btn-outline-dark " data-toggle="modal" data-target="#uploadImg">
-                                    <span>Grid</span><i class="fa fa-th" aria-hidden="true"></i>
-                                </button>
-                            </form>                            
-                        </li>     
+                            <a href="/grid.shtml">
+                            <button type="button" class="btn btn-outline-dark">
+                            <span>Grid</span><i class="fa fa-th" aria-hidden="true"></i>
+                            </button>
+                            </a>                                     
                         <li class="nav-item mx-1">                   
                             <a class="" href="upload.html">
                                 <button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#uploadImg">
@@ -40,10 +38,17 @@
             </div>   
             <div class="main-wrapper row background ">
                 <div class="overlay">
-                    <div class="inner">
+                    <div class="inner text-center">
                         <h1 class="display-1">
                             Photus
-                        </h1>                            
+                        </h1>     
+                        <div class="button-group">
+                            <a href="/grid.shtml" class="m-1">
+                                <button class="btn btn-lg btn-outline-light">
+                                    <span>Grid </span> &nbsp; <i class="fa fa-th" aria-hidden="true"></i>
+                                </button>
+                            </a>                           
+                        </div>                       
                     </div>                    
                 </div>                                
             </div>

@@ -11,7 +11,7 @@ my $index = 0;
 
 open(my $fh, '<', $photos_file) or die "Could not find any photos $!";
 
-
+print $query->header();
 while(my $p = <$fh>) {    
     if($index % 3 == 0) {        
         print '<DIV class="grid-item">';
