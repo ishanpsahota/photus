@@ -113,7 +113,9 @@ button:focus { outline: 0; }
     position: absolute;
     top: 0;
     left: 0;
-    backdrop-filter: saturate(1.8) blur(15px);
+
+    -webkit-backdrop-filter: saturate(1.8) blur(15px);
+            backdrop-filter: saturate(1.8) blur(15px);
 }
 
 .overlay .inner {
@@ -166,7 +168,8 @@ button:focus { outline: 0; }
 
 .navbar.bg-dark,
 .navbar.bg-light {
-    backdrop-filter: saturate(1.8) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(1.8) blur(20px) !important;
+            backdrop-filter: saturate(1.8) blur(20px) !important;
 }
 
 .navbar-nav .btn {
