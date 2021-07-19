@@ -133,7 +133,8 @@ button:focus { outline: 0; }
     transform: translate(-50%, -60%); */
 /* } */
 
-.background {
+.background,
+.background-admin {
     position: relative !important;
     background-repeat: no-repeat !important;
     background-attachment: fixed;
@@ -148,6 +149,11 @@ button:focus { outline: 0; }
     background: url(https://images.unsplash.com/photo-1503776768674-0e612f631345?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2650&q=80);
     background-position: center;
     background-color: #000;
+}
+
+.background-admin {
+    background-repeat: repeat !important;
+    background-image: url(https://images.unsplash.com/photo-1596787071138-308550420028?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80);
 }
 
 /* Fixes navbar button displacement at a certain window size */
@@ -402,17 +408,6 @@ ul.navbar-nav li:only-child .btn {
     text-align:center;
     vertical-align: middle;
     color: #295a8a;
-}
-
-.admin_background {
-    position: relative !important;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 50rem;
-    background-size: cover;
-    /* background: url(https://images.unsplash.com/photo-1624915422815-a7d76149d1e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80); */
-    background-image: url(https://images.unsplash.com/photo-1596787071138-308550420028?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80);
-    background-position: center;
 }
 
 .card-img-top {
