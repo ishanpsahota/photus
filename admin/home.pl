@@ -25,7 +25,7 @@ print <<"HTML_START";
 <DIV class="container-fluid home-wrapper">            
 <DIV class="row header-wrapper">
 <NAV class="navbar navbar-light bg-light w-100 ">
-<A class="navbar-brand" href="/admin/home.html">
+<A class="navbar-brand" href="/admin/">
 <IMG src="/assets/logos/photus-d.png" class="logo" />
 </A>    
 <STRONG class="mx-auto">
@@ -37,7 +37,7 @@ aria-expanded="false">
 Menu 
 </BUTTON>
 <DIV class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="admin_nav_menu">
-<A class="dropdown-item" href="services.html">Services </A>       
+<A class="dropdown-item" href="visitors.pl">Services </A>       
 <A class="dropdown-item" href="/grid.html">Grid </A>                            
 </DIV>
 </DIV>

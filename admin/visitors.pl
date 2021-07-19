@@ -10,7 +10,7 @@ print "Content-Type: text/html\n\n";
 print <<"HTML_START";
 <HTML>
 <HEAD>
-<TITLE> Home | Admin | Photo Grid Website </TITLE>
+<TITLE> Visitors | Admin | Photo Grid Website </TITLE>
 <META charset="utf-8">
 <META name="viewport" content="width=device-width, initial-scale=1">
 <LINK rel="icon" href="/assets/logos/photus-d.png"; />
@@ -25,7 +25,7 @@ print <<"HTML_START";
 <DIV class="container-fluid home-wrapper">            
 <DIV class="row header-wrapper">
 <NAV class="navbar navbar-light bg-light w-100 ">
-<A class="navbar-brand" href="/admin/home.html">
+<A class="navbar-brand" href="/admin/">
 <IMG src="/assets/logos/photus-d.png" class="logo" />
 </A>    
 <STRONG class="mx-auto">
@@ -37,21 +37,20 @@ aria-expanded="false">
 Menu 
 </BUTTON>
 <DIV class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="admin_nav_menu">
-<A class="dropdown-item" href="services.html">Services </A>                            
+<A class="dropdown-item" href="visitors.pl">Services </A>                            
 <A class="dropdown-item" href="/grid.html">Grid </A>                            
 </DIV>
 </DIV>
 </nav>                            
 </DIV>            
 <DIV class="main-wrapper row text-center">
-<H1 class="display-2 mx-auto my-1"> Grid </H1>
-<DIV class=" col-12">
-<H1 class=""> Visitors  </H1>
+<DIV class="justify-content-center col-12">
+<H1 class="display-3"> Visitors  </H1>
 HTML_START
 
 
 # Open file.
-my $file = "/home/stud1034/apacheSSL/logs/access.log";
+my $file = "/home/stud1034/apacheSSL/logs/access_log";
 
 if( ! open( FILE, "$file" ) ) {
 	print( "Could not open $file\n" );
@@ -62,9 +61,10 @@ my @array;
 my @tempor;
 
 print <<"HTML_BRIDGE";
+<DIV class="m-auto w-100 d-flex flex-column">
 <TABLE class="table table-striped m-auto table-inverse  table-responsive">
 <THEAD class="thead-inverse">
-<TR` class="">
+<TR class="">
 <TH>IP Address</TH>
 <TH> Date &nbsp; <I class="fa fa-calendar" aria-hidden="true"></I> </TH>
 <TH> File accessed </TH>
@@ -99,6 +99,7 @@ close( FILE );
 print <<"HTML_END";
 </TBDOY>
 </TABLE>
+</DIV>
 </DIV>                
 </DIV>        
 <DIV class="footer-wrapper row text-center text-md-left d-flex flex-column flex-md-row">                
