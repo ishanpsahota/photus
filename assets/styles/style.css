@@ -21,7 +21,6 @@ button:focus { outline: 0; }
 }
 
 .main-wrapper {    
-    background-color: #ddd;
     min-height: 45rem;    
     padding: 5rem 1rem;    
 }
