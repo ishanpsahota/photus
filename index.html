@@ -15,23 +15,23 @@
     <body>
         <div class="container-fluid home-wrapper">            
             <div class="row header-wrapper ">
-                <nav class="navbar navbar-light mx-0 bg-light w-100 ">
+                <nav class="navbar mx-0 bg-dark w-100 ">
                     <a class="navbar-brand" href="/">
-                        <img src="/assets/logos/photus-d.png" class="logo" />
+                        <svg viewBox="0 0 31 45" width="32px" height="32px"><path d="M15.5,0A15.5,15.5,0,0,0,0,15.5H0V43.3A1.7,1.7,0,0,0,1.7,45h.364a1.7,1.7,0,0,0,1.7-1.7V25.6A15.5,15.5,0,1,0,15.5,0Zm0,27.242A11.742,11.742,0,1,1,27.242,15.5,11.742,11.742,0,0,1,15.5,27.242Z" fill="#7f8c8d"/><path d="M13.053,14.088,17.537,6.32A9.325,9.325,0,0,0,9.552,8.211L13,14.182Z" fill="#7f8c8d"/><path d="M12.239,15.5,8.569,9.148A9.374,9.374,0,0,0,6.089,15.5a9.474,9.474,0,0,0,.189,1.882h7.048Z" fill="#7f8c8d"/><path d="M24.478,12.677A9.431,9.431,0,0,0,18.836,6.71l-3.444,5.967Z" fill="#7f8c8d"/><path d="M24.723,13.618H17.674l.273.47,4.484,7.764a9.376,9.376,0,0,0,2.48-6.352A9.549,9.549,0,0,0,24.723,13.618Z" fill="#7f8c8d"/><path d="M17.128,18.323l-3.67,6.357a9.336,9.336,0,0,0,7.99-1.891L18,16.817Z" fill="#7f8c8d"/><path d="M6.522,18.323a9.431,9.431,0,0,0,5.642,5.967l3.444-5.967Z" fill="#7f8c8d"/></svg>
                     </a>                                       
                     <ul class="navbar-nav ml-auto list-group-horizontal mt-2 mt-lg-0">
                         <li class="nav-item mx-1">                   
                             <!-- <a class="" href="grid.html"> -->
                             <form action="/cgi-bin/grid.pl">
                                 <button type="submit" class="btn btn-outline-dark " data-toggle="modal" data-target="#uploadImg">
-                                    Grid &nbsp;<i class="fa fa-th" aria-hidden="true"></i>
+                                    <span>Grid</span><i class="fa fa-th" aria-hidden="true"></i>
                                 </button>
                             </form>                            
                         </li>     
                         <li class="nav-item mx-1">                   
                             <a class="" href="upload.html">
                                 <button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#uploadImg">
-                                    Upload &nbsp; <i class="fa fa-upload" aria-hidden="true"></i>
+                                    <span>Upload</span><i class="fa fa-upload" aria-hidden="true"></i>
                                 </button>
                             </a>                                     
                         </li>                            
@@ -45,7 +45,7 @@
                     </h1>                            
                 </div>                                
             </div>
-            <div class="footer-wrapper mx-0 row text-center text-md-left d-flex flex-column flex-md-row">                
+            <div class="footer-wrapper row text-center text-md-left d-flex flex-column flex-md-row">                
                 <h4>
                     Photus
                 </h4>
@@ -62,5 +62,6 @@
                 </ul>                
             </div>                                            
         </div>
+        <script src="/assets/js/app.js" charset="utf-8"></script>
     </body>
 </html>

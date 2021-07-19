@@ -8,17 +8,19 @@
 body {
     font-family: 'Lato', sans-serif;
     position: relative;
+    background-color: #f0f2f7;
 }
 
-.header-wrapper {    
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);    
-    box-shadow: 0px 1px 10px 2px rgba(10, 10, 10, 15%);
+/* Accessibility? Lol, cry me a river */
+button:focus { outline: 0; }
+
+.header-wrapper {
     position: fixed;
     z-index: 10;
     width: 100%;
 }
 
-.main-wrapper {
+.main-wrapper {    
     background-color: #ddd;
     min-height: 45rem;    
     padding: 5rem 1rem;    
@@ -29,12 +31,12 @@ body {
     min-height: 4rem;
     align-items: center;
     padding: 1rem;
+    border-top: 1px solid #e2e6ef;
 }
 
-
-.logo {
-    max-height: 2rem;
-    width: auto;
+/* Hide the border if previous element is a hero */
+.main-wrapper.row.background + .footer-wrapper {
+    border-top-color: transparent;
 }
 
 .grid-container {
@@ -107,11 +109,12 @@ body {
 .overlay {
     height: 100%;
     width: 100%;    
-    background-color: rgba(10, 10, 10, 0.35);
+    background-color: rgba(10, 10, 50, 0.35);
     z-index: 5;
     position: absolute;
     top: 0;
     left: 0;
+    backdrop-filter: saturate(1.8) blur(15px);
 }
 
 .overlay .inner {
@@ -131,14 +134,277 @@ body {
 
 .background {
     position: relative !important;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat !important;
     background-attachment: fixed;
     min-height: 50rem;
     background-size: cover;
     /* background: url(https://images.unsplash.com/photo-1624915422815-a7d76149d1e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80); */
-    background-image: url(https://images.unsplash.com/photo-1616964029520-6f3274003a7f?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=100);
+    /* Alt backgrounds:
+        photo-1616964029520-6f3274003a7f
+        photo-1540175837026-c00e5be3177c
+        photo-1574169208507-84376144848b
+     */
+    background: url(https://images.unsplash.com/photo-1503776768674-0e612f631345?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2650&q=80);
     background-position: center;
+    background-color: #000;
 }
+
+/* Fixes navbar button displacement at a certain window size */
+.navbar-nav.mt-2 {
+    margin-top: 0 !important;
+}
+
+.navbar.bg-dark {
+    background-color: rgb(0 0 0 / 72%) !important;
+    box-shadow: 0px 1px 10px 2px rgb(10 10 10 / 25%);
+}
+
+.navbar.bg-light {
+    background-color: rgb(255 255 255 / 60%) !important;
+    box-shadow: 0px 1px 10px 2px rgb(10 10 10 / 5%);
+    border-bottom: 1px solid #e2e6ef;
+}
+
+.navbar.bg-dark,
+.navbar.bg-light {
+    backdrop-filter: saturate(1.8) blur(20px) !important;
+}
+
+.navbar-nav .btn {
+    padding: .2rem .9rem .2rem .9rem;
+    min-width: 5rem;
+    border-radius: 0;
+}
+
+ul.navbar-nav li:only-child .btn {
+     border-radius: 50px;
+}
+
+.navbar-nav .btn-outline-primary {
+    color: #3575ba;
+    border-color: #3575ba;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    min-width: 7rem;
+}
+
+.navbar-nav .btn-outline-primary:hover {
+    color: #efefef;
+    background-color: #295482;
+    border-color: #295482;
+}
+
+.navbar-nav .btn-outline-dark {
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.navbar.bg-dark .btn-outline-dark {
+    color: #b7bbbe;
+    border-color: #6a7276;
+}
+
+.navbar.bg-dark .btn-outline-dark:hover {
+    color: #d3d3d3;
+    background-color: #0a0a0a;
+    border-color: #363636;
+}
+
+.navbar.bg-light .btn-outline-dark {
+    color: #2e2e2e;
+    border-color: #646464;
+}
+
+.navbar.bg-light .btn-outline-dark:hover {
+    color: #efefef;
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+/* The spacing between the text and icon */
+.nav-item button span:first-child:not(:only-child) {
+    margin-right: .4rem;
+}
+
+/* The spacing between the text and icon if icon comes first */
+.nav-item button span:last-child:not(:only-child) {
+    margin-left: .4rem;
+}
+
+/* Image upload form
+------------------------------------------------------------------------------*/
+.upload-card {
+    background-color: #fff;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px !important;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px 5px rgb(223 227 238 / 35%);
+}
+
+#upload-form .dropzone {
+    position: relative;
+    padding: 55px 70px;
+    border: 2px dashed #bdcddd;
+    border-radius: 15px;
+    letter-spacing: 0.1rem;
+    user-select: none;
+    transition: background-color .2s linear, border-color .2s linear;
+}
+
+#upload-form .dropzone [type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* HACK JOB */
+::-webkit-file-upload-button {
+    cursor: pointer;
+}
+
+
+#upload-form .dropzone.active {
+    background-color: #f9fcff;
+    border-color: #75afff;
+}
+
+#upload-form .dropzone label:last-child {
+    margin-bottom: 0;
+}
+
+#upload-form .dropzone label.instruction,
+#upload-form .dropzone label.support {
+    display: block;
+}
+
+#upload-form .dropzone label.instruction {
+    font-weight: bold;
+    color: #295a8a;
+    letter-spacing: .1rem;
+}
+
+#upload-form .dropzone label.support {
+    color: #8da7c2;
+    letter-spacing: .07rem;
+}
+
+#upload-form .dropzone-icon {
+    display: block;
+    width: 100%;
+    height: 70px;
+    margin-bottom: 1.5rem;
+    transition: transform .2s linear, filter .2s linear;
+}
+
+#upload-form .dropzone-icon.active {
+    transform: translateY(-15%);
+    filter: drop-shadow(0px 13px 8px rgba(0, 90, 255, .21));
+}
+
+#upload-form .dropzone-link
+{
+    color: #175fd6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#upload-form .file-display {
+    display: none;
+    margin: 0;
+    margin-top: 1.3rem;
+    padding: 1.3rem;
+    border: 2px solid #eef3fa;
+    border-radius: 6px;
+    text-align: left;
+    background: #f7fafd;
+}
+
+#upload-form .file {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#upload-form .file + .file {
+    margin-top: 1rem;
+}
+
+#upload-form .file-image {
+    display: block;
+    max-width: 128px;
+    margin: auto;
+}
+
+#upload-form .file-info {
+    flex: 1 1 auto;
+    text-align: left;
+    overflow: hidden;
+}
+
+#upload-form .file-name {
+    position: relative;
+    padding-right: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #465769;
+}
+
+#upload-form .file-name strong {
+    padding-right: 8px;
+    color:#295a8a;
+    cursor: default;
+    user-select: none;
+}
+
+#upload-form .file-action {
+    display: inline;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    outline: none;
+    text-align: right;
+    background-color: #e5edf5;
+    transition: background-color .1s linear;
+    cursor: pointer;
+}
+
+#upload-form .file-action:hover {
+   background-color: #dce7f1;
+}
+
+#upload-form .file-action:active {
+    background-color: #d3e1ed;
+}
+
+#upload-form .file-action + .file-action {
+    margin-left: 10px;
+}
+
+#upload-form .file-action [class^="fa-"],
+#upload-form .file-action [class*=" fa-"] {
+    width: 100%;
+    margin-top: -5px;
+    text-align:center;
+    vertical-align: middle;
+    color: #295a8a;
+}
+
+
+/* Media Queries
+------------------------------------------------------------------------------*/
 
 .admin_background {
     position: relative !important;
@@ -217,5 +483,15 @@ body {
     .card-img-top {
         max-height: 25rem;
         width: auto;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .navbar-nav .btn-outline-primary,
+    .navbar-nav .btn-outline-dark {
+        border-radius: 0 !important;
+        min-width: 2.5rem;
+        padding-right: .4rem;
+        padding-left: .4rem;
     }
 }
