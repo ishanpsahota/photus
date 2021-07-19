@@ -48,4 +48,4 @@ close $file_g;
 
 close($file_handle);                                       
 print $query->header ( );
-print "<p> Uploaded file sent for review. Go <a href='/cgi-bin/grid.pl'> back </a> to the grid and check again later!.";
+print "<p> Uploaded file sent for review. Go <a href='/grid.shtml'> back </a> to the grid and check again later!.";
