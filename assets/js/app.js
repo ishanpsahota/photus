@@ -83,7 +83,7 @@ class ImageUploader {
     // }
 
     let sig = new ImageSignature(files[0]);
-    sig.sniff(8, (result) => {
+    sig.sniff(sig.maxBytesCanRead, (result) => {
       if (result == "image/jpeg" || result == "image/png") {
         this.addToList(sig.blob);
       } else {
@@ -138,6 +138,13 @@ class ImageSignature {
           patternMask: [0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff]
       }
     ];
+  }
+
+  get maxBytesCanRead() {
+    let longest = this.data.reduce((p, c, i, a) => 
+      a[p].bytePattern.length > c.bytePattern.length ? p : i, 0);
+
+    return this.data[longest].bytePattern.length;
   }
 
   match(bytes, sig) {
