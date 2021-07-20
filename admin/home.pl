@@ -89,7 +89,7 @@ Photus
 Ishan Prasad
 </LI>
 <LI class="list-group-item">
-Jad Al-Tahan
+Jad Altahan
 </LI>
 <LI class="list-group-item">
 Simran Kaur
