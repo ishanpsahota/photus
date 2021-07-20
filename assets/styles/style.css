@@ -302,8 +302,10 @@ ul.navbar-nav li:only-child .btn {
     border: 2px dashed #bdcddd;
     border-radius: 15px;
     letter-spacing: 0.1rem;
-    user-select: none;
     transition: background-color .2s linear, border-color .2s linear;
+
+    -webkit-user-select: none;
+            user-select: none;
 }
 
 #upload-form .dropzone [type="file"] {
@@ -416,7 +418,9 @@ ul.navbar-nav li:only-child .btn {
     padding-right: 8px;
     color:#295a8a;
     cursor: default;
-    user-select: none;
+
+    -webkit-user-select: none;
+            user-select: none;
 }
 
 #upload-form .file-action {
