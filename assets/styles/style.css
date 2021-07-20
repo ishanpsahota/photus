@@ -21,7 +21,6 @@ button:focus { outline: 0; }
 }
 
 .main-wrapper {    
-    background-color: #ddd;
     min-height: 45rem;    
     padding: 5rem 1rem;    
 }
@@ -114,7 +113,9 @@ button:focus { outline: 0; }
     position: absolute;
     top: 0;
     left: 0;
-    backdrop-filter: saturate(1.8) blur(15px);
+
+    -webkit-backdrop-filter: saturate(1.8) blur(15px);
+            backdrop-filter: saturate(1.8) blur(15px);
 }
 
 .overlay .inner {
@@ -132,7 +133,8 @@ button:focus { outline: 0; }
     transform: translate(-50%, -60%); */
 /* } */
 
-.background {
+.background,
+.background-admin {
     position: relative !important;
     background-repeat: no-repeat !important;
     background-attachment: fixed;
@@ -147,6 +149,11 @@ button:focus { outline: 0; }
     background: url(https://images.unsplash.com/photo-1503776768674-0e612f631345?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2650&q=80);
     background-position: center;
     background-color: #000;
+}
+
+.background-admin {
+    background-repeat: repeat !important;
+    background-image: url(https://images.unsplash.com/photo-1596787071138-308550420028?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80);
 }
 
 /* Fixes navbar button displacement at a certain window size */
@@ -167,7 +174,8 @@ button:focus { outline: 0; }
 
 .navbar.bg-dark,
 .navbar.bg-light {
-    backdrop-filter: saturate(1.8) blur(20px) !important;
+    -webkit-backdrop-filter: saturate(1.8) blur(20px) !important;
+            backdrop-filter: saturate(1.8) blur(20px) !important;
 }
 
 .navbar-nav .btn {
@@ -402,21 +410,6 @@ ul.navbar-nav li:only-child .btn {
     color: #295a8a;
 }
 
-
-/* Media Queries
-------------------------------------------------------------------------------*/
-
-.admin_background {
-    position: relative !important;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 50rem;
-    background-size: cover;
-    /* background: url(https://images.unsplash.com/photo-1624915422815-a7d76149d1e3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80); */
-    background-image: url(https://images.unsplash.com/photo-1596787071138-308550420028?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80);
-    background-position: center;
-}
-
 .card-img-top {
     /* max-width: 100%; */
     /* max-height: 25rem; */
@@ -437,6 +430,9 @@ ul.navbar-nav li:only-child .btn {
 
 }
 
+
+/* Media Queries
+------------------------------------------------------------------------------*/
 @media screen and (min-width: 677px) {
     
 }
