@@ -73,7 +73,7 @@ class ImageUploader {
       return;
     }
 
-    if (this.listNotEmpty())
+    if (this.listNotEmpty)
       this.resetList(false);
 
     // SECURITY CRITICAL: THIS CAN BE SPOOFED BY EXT CHANGE
@@ -116,7 +116,7 @@ class ImageUploader {
       this.form.reset();
   }
 
-  listNotEmpty() {
+  get listNotEmpty() {
     return this.list.children.length != 0;
   }
 }
