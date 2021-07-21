@@ -514,6 +514,11 @@ ul.navbar-nav li:only-child .btn {
     right: 10px;
 }
 
+.dropdown-toggle {
+    padding: .2rem .6rem .2rem .9rem;
+    min-width: 6rem;
+    border-radius: 50px;
+}
 
 
 
