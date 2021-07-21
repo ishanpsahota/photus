@@ -482,9 +482,18 @@ ul.navbar-nav li:only-child .btn {
 /* Dropdown Menu
 ------------------------------------------------------------------------------*/
 .dropdown-menu {
+    display: inline-block;
+    opacity: 0.0001;
+    margin: .65rem 0 0;
     border: none;
     box-shadow: 0px 10px 15px 0px rgb(12 12 12 / 33%);
-    margin: .65rem 0 0;
+    transition: 0.3s cubic-bezier(.2, 0, 0, 1.6);
+    transform: scale(0.6) translateY(-20%);
+}
+
+.dropdown-menu.show {
+    opacity: 0.9999;
+    transform: none;
 }
 
 .dropdown-menu:before {
