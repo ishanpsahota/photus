@@ -509,6 +509,11 @@ ul.navbar-nav li:only-child .btn {
     background-color: #f0f2f4;
 }
 
+.dropdown-item:active {
+    color: initial;
+    background-color: #e9ecef;
+}
+
 .dropdown-item span {
     position: absolute;
     right: 10px;
