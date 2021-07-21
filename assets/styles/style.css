@@ -479,6 +479,52 @@ ul.navbar-nav li:only-child .btn {
 }
 
 
+/* Dropdown Menu
+------------------------------------------------------------------------------*/
+.dropdown-menu {
+    border: none;
+    box-shadow: 0px 10px 15px 0px rgb(12 12 12 / 33%);
+    margin: .65rem 0 0;
+}
+
+.dropdown-menu:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: 18px;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-bottom: 8px solid rgb(255, 255, 255);
+    border-top: 8px solid transparent;
+    background-color: transparent;
+}
+
+.dropdown-item {
+    padding: .3rem .8rem;
+    font-size: 14px;
+    text-align: left;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f2f4;
+}
+
+.dropdown-item span {
+    position: absolute;
+    right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* Media Queries
 ------------------------------------------------------------------------------*/
 @media screen and (min-width: 677px) {
