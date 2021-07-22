@@ -39,7 +39,7 @@
     <DIV class="main-wrapper row">
     <DIV class="grid-container">
     <DIV class="grid-inner">
-        << <!--#include virtual="/cgi-bin/grid_perl.pl"--> >>
+        <!--#include virtual="/cgi-bin/grid_perl.cgi"-->
     </DIV>
 </DIV>
 </DIV>
