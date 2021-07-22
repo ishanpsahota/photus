@@ -46,7 +46,7 @@
                             </TR>
                         </THEAD>
                         <TBODY>
-                            << <!--#include virtual="/cgi-bin/visitors_perl.pl"--> >>
+                            <!--#include virtual="/cgi-bin/visitors_perl.pl"-->
                         </TBDOY>
                     </TABLE>
                 </DIV>
