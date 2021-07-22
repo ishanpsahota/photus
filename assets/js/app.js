@@ -73,7 +73,7 @@ class ImageUploader {
       return;
     }
 
-    if (this.listNotEmpty())
+    if (this.listNotEmpty)
       this.resetList(false);
 
     // SECURITY CRITICAL: THIS CAN BE SPOOFED BY EXT CHANGE
@@ -83,7 +83,7 @@ class ImageUploader {
     // }
 
     let sig = new ImageSignature(files[0]);
-    sig.sniff(8, (result) => {
+    sig.sniff(sig.maxBytesCanRead, (result) => {
       if (result == "image/jpeg" || result == "image/png") {
         this.addToList(sig.blob);
       } else {
@@ -116,7 +116,7 @@ class ImageUploader {
       this.form.reset();
   }
 
-  listNotEmpty() {
+  get listNotEmpty() {
     return this.list.children.length != 0;
   }
 }
@@ -138,6 +138,13 @@ class ImageSignature {
           patternMask: [0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff]
       }
     ];
+  }
+
+  get maxBytesCanRead() {
+    let longest = this.data.reduce((p, c, i, a) => 
+      a[p].bytePattern.length > c.bytePattern.length ? p : i, 0);
+
+    return this.data[longest].bytePattern.length;
   }
 
   match(bytes, sig) {

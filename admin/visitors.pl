@@ -13,7 +13,7 @@ print <<"HTML_START";
 <TITLE> Visitors | Admin | Photo Grid Website </TITLE>
 <META charset="utf-8">
 <META name="viewport" content="width=device-width, initial-scale=1">
-<LINK rel="icon" href="/assets/logos/photus-d.png"; />
+<LINK rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 <LINK rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <SCRIPT src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></SCRIPT>
 <SCRIPT src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></SCRIPT>
