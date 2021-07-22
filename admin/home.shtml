@@ -38,7 +38,7 @@
     <H1 class="display-2 mx-auto my-1"> Grid </H1>
     <DIV class="card-columns col-12">
     
-    << <!--#include virtual="/cgi-bin/home_manager.pl"--> >>
+    <!--#include virtual="/cgi-bin/home_manager.pl"-->
 </DIV>
 </DIV>
 <DIV class="footer-wrapper row text-center text-md-left d-flex flex-column flex-md-row">                
