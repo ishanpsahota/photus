@@ -576,7 +576,7 @@ ul.navbar-nav li:only-child .btn {
 }
 
 .action-panel a.action span {
-    padding-left: 30px;
+    padding-left: 33px;
     text-align: left;
     line-height: 1;
 }
@@ -597,6 +597,26 @@ ul.navbar-nav li:only-child .btn {
     left: 0;
     color: #ccc;
     transform: scale(1.2);
+}
+
+.action-panel a.action span.headline i.boxed {
+    margin-left: -7px;
+    margin-top: -5px;
+    width: 29px;
+    height: 29px;
+    line-height: 29px;
+    border-radius: 5px;
+    text-align: center;
+    background: #5d7c8a;
+    color: #f7f7f7;
+}
+
+.action-panel a.action span.headline i.fa-cog {
+    background-color: #90685a;
+}
+
+.action-panel a.action span.headline i.fa-file-alt {
+    background-color: #00796b;
 }
 
 
