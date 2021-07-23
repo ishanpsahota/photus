@@ -625,6 +625,32 @@ ul.navbar-nav li:only-child .btn {
 }
 
 
+/* Bootstrap Table Override
+------------------------------------------------------------------------------*/
+.table-full-page-wrapper {
+    padding-top: 4.5rem;
+}
+
+.table-responsive {
+    display: inline-table;
+}
+
+.table td, .table th {
+    border-top: none;
+    /*padding-left: 0;
+    padding-right: 0;*/
+}
+
+.table thead th {
+    border-width: 1px;
+    border-color: #e2e6ef;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgb(84 103 121 / 5%);
+}
+
+
 /* Media Queries
 ------------------------------------------------------------------------------*/
 @media screen and (min-width: 677px) {
