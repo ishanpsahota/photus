@@ -541,6 +541,11 @@ ul.navbar-nav li:only-child .btn {
     border-radius: 50px;
 }
 
+.dropdown-toggle::after {
+    margin-left: .4rem;
+    vertical-align: .155em;
+}
+
 
 /* Admin Action Panel
 ------------------------------------------------------------------------------*/
