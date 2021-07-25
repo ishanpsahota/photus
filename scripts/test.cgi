@@ -12,7 +12,7 @@ my $pending_file = "/home/stud1034/apacheSSL/cgi-bin/pending.txt";
 my $photos_file = "/home/stud1034/apacheSSL/cgi-bin/photos.txt";
 my $image_approval = 'true';
 
-OPEN(my $upload, "+<$pending_file") or die "$!";
+open (my $upload, "+<$pending_file") or die "$!";
 
 while(my $i = <$upload>) {
     if($i =~ /$img\n/) {
