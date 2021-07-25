@@ -10,13 +10,13 @@ my $img = "https://images.unsplash.com/photo-1536329583941-14287ec6fc4e?ixid=Mnw
 
 my $pending_file = "/home/stud1034/apacheSSL/cgi-bin/pending.txt";
 my $photos_file = "/home/stud1034/apacheSSL/cgi-bin/photos.txt";
-my $decision = 'true';
+my $user_choice = 'true';
 
 OPEN(my $upload, "+<$pending_file") or die "$!";
 
 while(my $i = <$upload>) {
     if($i =~ /$img\n/) {
-        if($decision eq 'true') {
+        if($user_choice eq 'true') {
             print "File accepted.\n";
             OPEN(my $photos, ">>", $photos_file) or die "Can't save the changes!\n";
             print $photos  "$img\n";
@@ -26,7 +26,7 @@ while(my $i = <$upload>) {
             last;
         }
 
-        if(decision eq 'false') {
+        if(user_choice eq 'false') {
             print "File rejected.\n";
             $i =~ s/$img\n/""/;
             close $upload;
