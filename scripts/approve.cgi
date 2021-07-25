@@ -5,7 +5,7 @@ use CGI qw(:all);
 my $query = new CGI();
 
 my $photos_file = "/home/stud1034/apacheSSL/cgi-bin/photos.txt";
-my $pending_file = "/home/stud1034/apacheSSL/cgi-bin/pendging.txt";
+my $pending_file = "/home/stud1034/apacheSSL/cgi-bin/pending.txt";
 
 my $decision = $query->param('allow');
 my $img = $query->param('image')
