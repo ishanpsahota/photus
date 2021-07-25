@@ -39,7 +39,7 @@ sub approveFile {
     my $approve = shift;
 
     if($approve eq 'true') {
-        print "H";
+        print "H\n";
         updateGridFile($image);
         updatePendingFile($image);        
     }
@@ -51,7 +51,7 @@ sub approveFile {
     }
 }
 
-sub updateGridFile($img) {
+sub updateGridFile {
     my $image = shift;
     open(my $update_grid_file, ">>", $photos_file) or die qq(Can't update the grid. $!\n);
     print $update_grid_file  "$image\n";
@@ -59,7 +59,7 @@ sub updateGridFile($img) {
     print "Image approved\n";
 }
 
-sub updatePendingFile($img) {
+sub updatePendingFile {
 
     my $image = shift;
 
