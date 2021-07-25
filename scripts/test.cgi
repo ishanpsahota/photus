@@ -49,7 +49,7 @@ sub approveFile {
 
 sub updateGridFile {
     my $image = shift;
-    open(my $update_grid_file, ">>", $photos_file) or die qq(Can't update the grid. $!\n);
+    open(my $update_grid_file, ">>", $photos_file) or die "Can't update the grid. $!\n";
     print $update_grid_file  "$image\n";
     close $update_grid_file;
     print "Image approved\n";
@@ -66,18 +66,15 @@ sub updatePendingFile {
     close( $pending_file_handler ); 
 
 
-<<<<<<< HEAD
-    print "I: $image\n";
-
-    foreach my $i ( @upload_imgs ) { 
-	print "$i";
-=======
     open( my $update_upload, ">", $pending_file ) or die qq(Can't make the final changes: $!\n);    
-
-    foreach my $i ( @entries ) {                 
->>>>>>> dddf35701e6fe168074b09ff08e75473f8bf9a76
-        print {$update_upload} $i unless ( $i =~ /$image/ ); 
+    print "$image\n";
+    chomp($image);
+    foreach my $imgs ( @entries ) {                
+	chomp($imgs); 
+	print "$imgs\n";
+        print {$update_upload} "$imgs\n" unless ( $imgs eq $image ); 
     } 
+
     close( $update_upload );
     print "Removed\n";
 }
