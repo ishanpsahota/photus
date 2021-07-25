@@ -200,6 +200,42 @@ button:focus { outline: 0; }
             backdrop-filter: saturate(1.8) blur(15px);
 }
 
+
+/* Navbar
+------------------------------------------------------------------------------*/
+nav.flex-3col-mid-center,
+nav.flex-3col-mid-center > *:first-child,
+nav.flex-3col-mid-center > *:nth-child(2),
+nav.flex-3col-mid-center > *:last-child {
+  flex: 1;
+  display: flex;
+}
+
+nav.flex-3col-mid-center > *:first-child {
+    justify-content: flex-start !important;
+}
+
+nav.flex-3col-mid-center > *:nth-child(2) {
+    justify-content: center !important;
+}
+
+nav.flex-3col-mid-center > *:last-child {
+    justify-content: flex-end !important;
+}
+
+nav .btn-group button { 
+    flex: none !important;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar-brand {
+    margin-right: 0;
+    font-size: 0;
+}
+
 /* Fixes navbar button displacement at a certain window size */
 .navbar-nav.mt-2 {
     margin-top: 0 !important;
