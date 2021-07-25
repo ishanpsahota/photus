@@ -135,6 +135,11 @@ button:focus { outline: 0; }
     margin-bottom: 1.5rem;
 }
 
+.hero-logo {
+    height: 7rem;
+    margin-bottom: 1.4rem;
+}
+
 .hero-title {
     font-size: 4.5rem;
     font-weight: 300;
