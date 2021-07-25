@@ -878,6 +878,10 @@ ul.navbar-nav li:only-child .btn {
         padding-left: .4rem;
     }
 
+    .nav-item button span {
+        display: none;
+    }
+
     .nav-item button span:last-child:not(:only-child) {
         margin-left: 0;
     }
