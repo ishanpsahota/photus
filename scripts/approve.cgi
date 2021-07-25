@@ -33,6 +33,8 @@ approveFile($img, $image_approval);
 sub approveFile {
     my $image = shift;
     my $approve = shift;    
+	   
+    print "$image\n<br/>";
 
     if($approve eq 'true') {
         print "Approved\n<br/>";
@@ -64,15 +66,15 @@ sub updatePendingFile {
 
     my @entries = <$pending_file_handler>; 
     close( $pending_file_handler ); 
-
-
-    open( my $update_upload, ">", $pending_file ) or die qq(Can't make the final changes: $!\n);    
-    print "$image\n<br/>";    
+	
+    open( my $update_upload, ">", $pending_file ) or die qq(Can't make the final changes: $!\n);        
     chomp($image);
-    foreach my $imgs ( @entries ) {                
-	    chomp($imgs); 
-	    print "$imgs\n<br/>";        
-        print {$update_upload} $imgs unless ( $imgs eq $image ); 
+    
+    foreach my $imgs ( @entries ) {                	    
+	    chomp($imgs);
+	    print "S: $image <br/>";
+	    print "A: $imgs <br/>";
+	    print {$update_upload} "$imgs\n" unless ( ($imgs eq $image) or ($imgs =~ m/$image/) ); 
     } 
 
     close( $update_upload );
@@ -81,8 +83,7 @@ sub updatePendingFile {
 
 sub removeImageFile {
     my $image = shift;
-    unlink("$upload_dir/$image");
-    print "File removed.\n";
+    unlink($upload_dir . $image);
 }
 
 
