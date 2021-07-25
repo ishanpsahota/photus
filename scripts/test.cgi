@@ -12,11 +12,15 @@ my $pending_file = "/home/stud1034/apacheSSL/cgi-bin/pending.txt";
 my $photos_file = "/home/stud1034/apacheSSL/cgi-bin/photos.txt";
 my $image_approval = 'true';
 
+print "Content-type: text/html\n\n";
+
 open (my $upload, "+<$pending_file") or die "$!";
 
 while(my $i = <$upload>) {
-    if($i =~ /$img\n/) {
+    print "$i";
+    if($i =~ /$img/) {
         if($image_approval eq 'true') {
+            print "h";
             print "File accepted.\n";
             OPEN(my $photos, ">>", $photos_file) or die "Can't save the changes!\n";
             print $photos  "$img\n";
@@ -27,6 +31,7 @@ while(my $i = <$upload>) {
         }
 
         if($image_approval eq 'false') {
+            print "nh";
             print "File rejected.\n";
             $i =~ s/$img\n/""/;
             close $upload;
