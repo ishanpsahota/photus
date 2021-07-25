@@ -42,7 +42,7 @@
               </tr>
             </thead>
             <tbody>
-              <!--#include virtual="/cgi-bin/visitors_perl.pl"-->
+              <!--#include virtual="/cgi-bin/visitors-log.pl"-->
             </tbody>
           </table>
         </div>
