@@ -4,6 +4,8 @@ use strict;
 use CGI qw(:all);
 my $query = new CGI();
 
+print "Content-type: text/html\n\n";
+
 my $photos_file = "/home/stud1034/apacheSSL/cgi-bin/pending.txt";
 my $index = 0;
 
