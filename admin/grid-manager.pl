@@ -11,12 +11,6 @@ my $index = 0;
 
 open(my $fh, '<', $photos_file) or die "Could not find any photos $!";
 
-my $count = `wc -l < $photos_file`;
-chomp($count);
-if($count eq 0) {
-  die "Cannot get any images. Check back later.\n";
-}
-
 while(my $p = <$fh>) {  
 print <<CARD_HTML;
 <li class="upload-manager-card">
