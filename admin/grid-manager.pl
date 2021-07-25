@@ -14,10 +14,13 @@ open(my $fh, '<', $photos_file) or die "Could not find any photos $!";
 my $count = `wc -l < $photos_file`;
 chomp($count);
 if($count eq 0) {
-  die "Cannot get any images. Check back later\n";
+   print "DIV CLASS='d-flex m-auto justify-content-center'>";
+   print "<H1 CLASS='DISPLAY-4'> No images pending for approval.</H1>";
+   print "<H1> Check back later? </H1>";
+   print "</DIV>";
 }
-
-while(my $p = <$fh>) {  
+else {
+while (my $p = <$fh>) {  
 print <<CARD_HTML;
 <li class="upload-manager-card">
   <div class="upload-manager-card-image" style="background-image: url($p)"></div>
@@ -35,5 +38,12 @@ print <<CARD_HTML;
 </li>
 CARD_HTML
 }
+
+
+
+}
+
+
+
 
 
