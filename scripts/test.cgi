@@ -72,8 +72,9 @@ sub updatePendingFile {
     print "Removed\n";
 }
 
-sub removeImageFile($img) {
-    unlink($img);
+sub removeImageFile {
+    my $image = shift;
+    unlink($image);
     print "File removed.\n";
 }
 
