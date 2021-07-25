@@ -6,7 +6,7 @@ use CGI qw(:all);
 
 my $query = new CGI();
 
-my $img = "https://images.unsplash.com/photo-1536329583941-14287ec6fc4e?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwzMHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
+my $img = "https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60";
 
 my $pending_file = "/home/stud1034/apacheSSL/cgi-bin/pending.txt";
 my $photos_file = "/home/stud1034/apacheSSL/cgi-bin/photos.txt";
@@ -39,7 +39,7 @@ sub approveFile {
     my $approve = shift;
 
     if($approve eq 'true') {
-        print "H";
+        print "H\n";
         updateGridFile($image);
         updatePendingFile($image);        
     }
@@ -51,7 +51,7 @@ sub approveFile {
     }
 }
 
-sub updateGridFile($img) {
+sub updateGridFile {
     my $image = shift;
     open(my $update_grid_file, ">>", $photos_file) or die qq(Can't update the grid. $!\n);
     print $update_grid_file  "$image\n";
@@ -59,7 +59,7 @@ sub updateGridFile($img) {
     print "Image approved\n";
 }
 
-sub updatePendingFile($img) {
+sub updatePendingFile {
 
     my $image = shift;
 
