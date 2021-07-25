@@ -19,13 +19,22 @@ while(PENDING) {
     my $line = $_ if /^$img/;
     print $myline;
     if($line eq 1) {
+        if($decision == 'true') {
+            $line =~ s/$img/\n/;
+            print PHOTOS "$img\n";
+            close PHOTOS;
+            close PENDING;
+            print "Changes done."
+            last;
+        }
+
+        if($decision == 'false') {
+            $line =~ s/$img/""/;        
+            close PHOTOS;
+            close PENDING;
+            last;
+        }
         
-        $line =~ s/$img/\n/;
-        print PHOTOS "$img\n";
-        close PHOTOS;
-        close PENDING;
-        print "Changes done."
-        last;
     }
 }
 

@@ -24,7 +24,7 @@
           <strong class="mx-auto">Admin Panel (Upload Manager)</strong>                                                                        
           <ul class="navbar-nav list-group-horizontal">
             <li class="nav-item mx-1">
-              <a href="/admin/index.html">
+              <a href="/admin/">
                 <button type="button" class="btn btn-outline-dark"><i class="fa fa-arrow-left" aria-hidden="true"></i><span>Admin Panel</span></button>
               </a>
             </li>
