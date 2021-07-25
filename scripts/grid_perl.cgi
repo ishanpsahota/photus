@@ -12,7 +12,8 @@ my $index = 0;
 open(my $fh, '<', $photos_file) or die "Could not find any photos $!";
 
 print $query->header();
-while(my $p = <$fh>) {    
+while(my $p = <$fh>) {   
+    chomp($p);
     if($index % 3 == 0) {        
         print '<DIV class="grid-item">';
         print '<IMG src="';
@@ -39,6 +40,7 @@ HTML_BRIDGE
 $index = 0;
 open(my $f1, '<', $photos_file) or die "Could not find any photos $!";
 while( my $p1 = <$f1>) {
+    chomp($p1);
     if($index % 3 == 1) {        
         print '<DIV class="grid-item">';
         print '<IMG src="';
@@ -65,6 +67,7 @@ HTML_BRIDGE
 $index = 0;    
 open(my $f2, '<', $photos_file) or die "Could not find any photos $!";
 while( my $p2 = <$f2>) {
+    chomp($p2);
     if($index % 3 == 2) {        
         print '<DIV class="grid-item">';
         print '<IMG src="'; 
