@@ -13,18 +13,18 @@ my $img = $query->param('image');
 print "Content-type: text/html\n\n";
 # print $query->header ( );
 
-open(PENDINGFILE, "+<$pending_file") or die "$!";
+open($upload_holder, "+<$pending_file") or die "$!";
 open(PHOTOS, ">>$photos_file") or die "Not able to connect with grid.";
 
-while(PENDINGFILE) {
-    my $line = $_ if /^$img/;
+while(y $c = $upload_holder) {
+    my $line = $c if /^$img/;
     print $line;
     if($line eq 1) {
         if($decision == 'true') {
             $line =~ s/$img/\n/;            
             print PHOTOS "$img\n";
             close PHOTOS;
-            close PENDINGFILE;
+            close $upload_holder;
             print $query->header ( );
             print "Changes done.";
             last;
