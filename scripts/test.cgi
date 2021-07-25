@@ -28,10 +28,6 @@ if(not defined $photos_file) {
     die qq(Can't save changes.\n);
 }
 
-open (my $upload, "+<$pending_file") or die "$!";
-my @upload_imgs = <$upload>; 
-close( $upload ); 
-
 approveFile($img, $image_approval);
 
 sub approveFile {
@@ -63,12 +59,23 @@ sub updatePendingFile {
 
     my $image = shift;
 
-    open( my $update_upload, ">", $pending_file ) or die qq(Can't make the final changes: $!\n);
+    open( my $pending_file_handler, "<", $pending_file )
+       or die qq(Cannot update the manager: $!\n); 
 
+    my @entries = <$pending_file_handler>; 
+    close( $pending_file_handler ); 
+
+
+<<<<<<< HEAD
     print "I: $image\n";
 
     foreach my $i ( @upload_imgs ) { 
 	print "$i";
+=======
+    open( my $update_upload, ">", $pending_file ) or die qq(Can't make the final changes: $!\n);    
+
+    foreach my $i ( @entries ) {                 
+>>>>>>> dddf35701e6fe168074b09ff08e75473f8bf9a76
         print {$update_upload} $i unless ( $i =~ /$image/ ); 
     } 
     close( $update_upload );
@@ -81,59 +88,6 @@ sub removeImageFile {
     print "File removed.\n";
 }
 
-
-# while(my $i = <$upload>) {    
-#     if($i =~ /$img\n/) {
-#         if($image_approval eq 'true') {
-#             print "h";
-#             print "File accepted.\n";
-#             OPEN(my $photos, ">>", $photos_file) or die "Can't save the changes!\n";
-#             print $photos  "$img\n";
-#             close $photos;
-#             $i =~ s/$img\n/""/;
-#             close $upload;
-#             last;
-#         }
-
-#         if($image_approval eq 'false') {
-#             print "nh";
-#             print "File rejected.\n";
-#             $i =~ s/$img\n/""/;
-#             close $upload;
-#             last;
-#         }
-#     }
-# }
-
-# removeTime( "john", "times.txt" ); 
-
-# sub removeTime { 
-#     my $name      = shift;
-#     my $time_file = shift;
-
-#     if (not defined $time_file) {
-#         #Make sure that the $time_file was passed in too.
-#         die qq(Name of Time file not passed to subroutine "removeTime"\n);
-#     }
-
-#     # Read file into an array for processing
-#     open( my $read_fh, "<", $time_file )
-#        or die qq(Can't open file "$time_file" for reading: $!\n); 
-
-#     my @file_lines = <$read_fh>; 
-#     close( $read_fh ); 
-
-#     # Rewrite file with the line removed
-#     open( my $write_fh, ">", $time_file )
-#         or die qq(Can't open file "$time_file" for writing: $!\n);
-
-#     foreach my $line ( @file_lines ) { 
-#         print {$write_fh} $line unless ( $line =~ /$name/ ); 
-#     } 
-#     close( $write_fh ); 
-
-#     print( "Reservation successfully removed.<br/>" ); 
-# }
 
 
 print "\nFile review done. Go <a href='/admin/grid-manager.shtml'> back </a> to Grid Manager.\n";
