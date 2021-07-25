@@ -13,7 +13,7 @@ my $img = $query->param('image')
 print $query->header ( );
 
 open(PENDING, "+<$pending_file") or die "$!";
-open(PHOTOS, ">$photos_file") or die "Not able to connect with grid.";
+open(PHOTOS, ">>$photos_file") or die "Not able to connect with grid.";
 
 while(PENDING) {
     my $line = $_ if /^$img/;
@@ -21,7 +21,12 @@ while(PENDING) {
     if($line eq 1) {
         
         $line =~ s/$img/\n/;
-
+        print PHOTOS "$img\n";
+        close PHOTOS;
+        close PENDING;
+        print "Changes done."
         last;
     }
 }
+
+print "<p> File review done. Go <a href='/admin/grid-manager.shtml'> back </a> to the grid manager.";
