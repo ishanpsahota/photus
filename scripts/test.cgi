@@ -65,7 +65,10 @@ sub updatePendingFile {
 
     open( my $update_upload, ">", $pending_file ) or die qq(Can't make the final changes: $!\n);
 
+    print "I: $image\n";
+
     foreach my $i ( @upload_imgs ) { 
+	print "$i";
         print {$update_upload} $i unless ( $i =~ /$image/ ); 
     } 
     close( $update_upload );
