@@ -200,6 +200,42 @@ button:focus { outline: 0; }
             backdrop-filter: saturate(1.8) blur(15px);
 }
 
+
+/* Navbar
+------------------------------------------------------------------------------*/
+nav.flex-3col-mid-center,
+nav.flex-3col-mid-center > *:first-child,
+nav.flex-3col-mid-center > *:nth-child(2),
+nav.flex-3col-mid-center > *:last-child {
+  flex: 1;
+  display: flex;
+}
+
+nav.flex-3col-mid-center > *:first-child {
+    justify-content: flex-start !important;
+}
+
+nav.flex-3col-mid-center > *:nth-child(2) {
+    justify-content: center !important;
+}
+
+nav.flex-3col-mid-center > *:last-child {
+    justify-content: flex-end !important;
+}
+
+nav .btn-group button { 
+    flex: none !important;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar-brand {
+    margin-right: 0;
+    font-size: 0;
+}
+
 /* Fixes navbar button displacement at a certain window size */
 .navbar-nav.mt-2 {
     margin-top: 0 !important;
@@ -541,6 +577,11 @@ ul.navbar-nav li:only-child .btn {
     border-radius: 50px;
 }
 
+.dropdown-toggle::after {
+    margin-left: .4rem;
+    vertical-align: .155em;
+}
+
 
 /* Admin Action Panel
 ------------------------------------------------------------------------------*/
@@ -625,6 +666,151 @@ ul.navbar-nav li:only-child .btn {
 }
 
 
+/* Bootstrap Table Override
+------------------------------------------------------------------------------*/
+.table-full-page-wrapper {
+    padding-top: 4.5rem;
+}
+
+.table-responsive {
+    display: inline-table;
+}
+
+.table td, .table th {
+    border-top: none;
+    /*padding-left: 0;
+    padding-right: 0;*/
+}
+
+.table thead th {
+    border-width: 1px;
+    border-color: #e2e6ef;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgb(84 103 121 / 5%);
+}
+
+
+/* Upload Manager Card
+------------------------------------------------------------------------------*/
+.upload-manager-card-list {
+    display: block;
+    padding: 0;
+    font-size: 0;
+    text-align: center;
+    list-style: none;
+}
+
+.upload-manager-card {
+    display: inline-block;
+    width: 90%;
+    max-width: 20rem;
+    margin: 1rem;
+    font-size: 1rem;
+    border-radius: .4rem;
+    text-decoration: none;
+    overflow: hidden;
+    box-shadow: 0px 7px 17px 10px rgb(230 234 243 / 40%);
+}
+
+.upload-manager-card-image {
+    display: block;
+    min-height: 20rem;
+    background: #fff center center no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+.upload-manager-switch {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.upload-manager-switch input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+}
+
+.upload-manager-switch label {
+    background-color: #f2f2f2;
+    color: #131313;
+    font-size: 15px;
+    line-height: 1;
+    text-align: left;
+    padding: 8px 16px;
+    margin-right: -1px;
+    margin-bottom: 0;
+    cursor: pointer;
+
+    -webkit-user-select: none;
+            user-select: none;
+}
+
+.upload-manager-switch label i.fa {
+    position: relative;
+    text-align: right;
+    display: block;
+    line-height: 0;
+    top: -6px;
+}
+
+.upload-manager-switch input:checked + label {
+    background-color: #84a184;
+    opacity: 0.8;
+    background: radial-gradient(circle, transparent 20%, #84a184 20%, #84a184 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #84a184 20%, #84a184 80%, transparent 80%, transparent) 12.5px 12.5px, linear-gradient(#6b826b 1px, transparent 1px) 0 -0.5px, linear-gradient(90deg, #6b826b 1px, #84a184 1px) -0.5px 0;
+    background-size: 25px 25px, 25px 25px, 12.5px 12.5px, 12.5px 12.5px;
+}
+
+.upload-manager-switch input:last-of-type:checked + label {
+    background-color: #d17979;
+    opacity: 0.8;
+    background: repeating-linear-gradient( -45deg, #c86060, #c86060 2px, #d17979 2px, #d17979 10px );
+}
+
+.upload-manager-switch input:last-of-type + label {
+    border-bottom: 1px solid #e2e6ef;
+}
+
+.upload-manager-switch input:last-of-type:checked + label {
+    border-bottom-color: transparent;
+}
+
+.upload-manager-switch input + label,
+.upload-manager-switch input + label i.fa {
+    color: #608060;
+}
+
+.upload-manager-switch input:last-of-type + label,
+.upload-manager-switch input:last-of-type + label i.fa {
+    color: #d17979;
+}
+
+.upload-manager-switch input:checked + label,
+.upload-manager-switch input:checked + label i.fa,
+.upload-manager-switch input:last-of-type:checked + label,
+.upload-manager-switch input:last-of-type:checked + label i.fa {
+    color: #fff;
+}
+
+.upload-manager-button {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    padding-bottom: .7rem;
+    text-align: center;
+    outline: 0;
+    border: 0;
+    background-color: #fff;
+    color: #454545;
+}
+
+
 /* Media Queries
 ------------------------------------------------------------------------------*/
 @media screen and (min-width: 677px) {
@@ -690,6 +876,10 @@ ul.navbar-nav li:only-child .btn {
         min-width: 2.5rem;
         padding-right: .4rem;
         padding-left: .4rem;
+    }
+
+    .nav-item button span {
+        display: none;
     }
 
     .nav-item button span:last-child:not(:only-child) {
