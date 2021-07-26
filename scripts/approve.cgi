@@ -3,30 +3,53 @@
 use strict;
 
 use CGI qw(:all);
+use File::Copy;
 
 my $query = new CGI();
 
 my $img = $query->param('image');
 
-my $pending_file = "/home/stud1034/apacheSSL/cgi-bin/pending.txt";
-my $photos_file = "/home/stud1034/apacheSSL/cgi-bin/photos.txt";
-my $upload_dir = "/home/stud1034/apacheSSL/htdocs";
+# my $pending_file = "/home/stud1034/apacheSSL/cgi-bin/pending.txt";
+# my $photos_file = "/home/stud1034/apacheSSL/cgi-bin/photos.txt";
+my $upload_dir = "/home/stud1034/apacheSSL/htdocs/uploads";
+my $pending_dir = "/home/stud1034/apacheSSL/htdocs/pending";
+my $home_dir = "/home/stud1034/apacheSSL/htdocs";
+my $deleted_dir = "/home/stud1034/apacheSSL/htdocs/deleted";
 my $image_approval = $query->param('allow');
 
+my @pending_imgs = <../htdocs/pending/*>;
+my @uploaded_imgs = <../htdocs/uploads/*>;
+
+my $pending_count = @pending_imgs;
+my $uploaded_count = @uploaded_imgs;
 
 print "Content-type: text/html\n\n";
 
+if($pending_count eq 0) {
+    print "No images pending for approval.\n";
+    die qq("No images pending for approval.\n");
+}
+
 if(not defined $img) {
+    print "No image data received.\n";
     die qq("No image data received.\n");
 }
 
-if(not defined $pending_file) {
-    die qq(Not able to match images.\n);
+if(not -d $upload_dir) {
+    die qq("Cannot process the upload.\n");
 }
 
-if(not defined $photos_file) {
-    die qq(Can't save changes.\n);
+if(not -d $pending_dir) {
+    die qq("Cannot process the request.\n");
 }
+
+# if(not defined $pending_file) {
+#     die qq(Not able to match images.\n);
+# }
+
+# if(not defined $photos_file) {
+#     die qq(Can't save changes.\n);
+# }
 
 approveFile($img, $image_approval);
 
@@ -38,52 +61,56 @@ sub approveFile {
 
     if($approve eq 'true') {
         print "Approved\n<br/>";
-        updateGridFile($image);
-        updatePendingFile($image);        
+        moveFile($image);
     }
 
     if($approve eq 'false') {
         print "Rejected\n</br>";
-        updatePendingFile($image);
-        removeImageFile($image);
+        removeFile($image);
     }
 }
 
-sub updateGridFile {
+sub moveFile {
     my $image = shift;
-    open(my $update_grid_file, ">>", $photos_file) or die "Can't update the grid. $!\n";
-    print $update_grid_file "$image\n";
-    close $update_grid_file;
-    print "Image approved\n";
+    foreach my $iter (@pending_imgs) {        
+        my $pf = substr($iter, 9);
+        print $pf;
+        if($pf eq $image) {
+            my $from = $home_dir . $img;
+            move ($from, $upload_dir) or print "Move failed: $!\n";
+            last;
+        }
+    }
+
+    my @t = split("/", $img);
+
+    if(-e $upload_dir . "/" . $t[1]) {
+        print "File moved successfully.\n";
+    }
 }
 
-sub updatePendingFile {
-
+sub deleteFile {
     my $image = shift;
-
-    open( my $pending_file_handler, "<", $pending_file )
-       or die qq(Cannot update the manager: $!\n); 
-
-    my @entries = <$pending_file_handler>; 
-    close( $pending_file_handler ); 
-	
-    open( my $update_upload, ">", $pending_file ) or die qq(Can't make the final changes: $!\n);        
-    chomp($image);
-    
-    foreach my $imgs ( @entries ) {                	    
-	    chomp($imgs);
-	    print "S: $image <br/>";
-	    print "A: $imgs <br/>";
-	    print {$update_upload} "$imgs\n" unless ( ($imgs eq $image) or ($imgs =~ m/$image/) ); 
-    } 
-
-    close( $update_upload );
-    print "Removed\n<br/>";
+    unlink($upload_dir . $image) or print "Failed to delete file: $!\n";
 }
 
-sub removeImageFile {
+sub removeFile {
     my $image = shift;
-    unlink($upload_dir . $image);
+     foreach my $iter (@pending_imgs) {        
+        my $pf = substr($iter, 9);
+        print $pf;
+        if($pf eq $image) {
+            my $from = $home_dir . $img;
+            move ($from, $deleted_dir) or print "Move failed: $!\n";
+            last;
+        }
+    }
+
+    my @t = split("/", $img);
+
+    if(-e $deleted_dir . "/" . $t[1]) {
+        print "File removed successfully.\n";
+    }
 }
 
 

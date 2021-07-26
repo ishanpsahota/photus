@@ -38,7 +38,7 @@
       <div class="main-wrapper row">
         <div class="grid-container">
           <div class="grid-inner">
-            <!--#include virtual="/cgi-bin/grid_perl.cgi"-->
+            <!--#include virtual="/cgi-bin/grid-generator.cgi"-->
           </div>
         </div>
       </div>

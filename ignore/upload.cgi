@@ -14,8 +14,8 @@ print $query->header ( );
 print "There was a problem uploading your photo (try a smaller file).";
 exit;
 }
-# my $photos_file = "/home/stud1034/apacheSSL/cgi-bin/photos.txt";
-my $dir = "/home/stud1034/apacheSSL/htdocs/pending";
+my $photos_file = "/home/stud1034/apacheSSL/cgi-bin/photos.txt";
+my $dir = "/home/stud1034/apacheSSL/htdocs/uploads";
 my $safe_filename_characters = "a-zA-Z0-9_.-";
 my $pending = "/home/stud1034/apacheSSL/cgi-bin/pending.txt";
 $file =~ s/[^$safe_filename_characters]//g;
@@ -40,6 +40,11 @@ print UPLOADFILE;
 }
 
 close UPLOADFILE;
+
+open (my $file_g, ">>", $pending) || die "Could not open file: $!\n";
+print $file_g  "/uploads/$file\n";
+close $file_g;
+
 
 close($file_handle);                                       
 print $query->header ( );

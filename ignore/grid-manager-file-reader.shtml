@@ -33,7 +33,7 @@
       </div>
       <div class="main-wrapper text-center">
         <ul class="upload-manager-card-list">
-          <!--#include virtual="/cgi-bin/grid-manager_test.pl"-->
+          <!--#include virtual="/cgi-bin/grid-manager.pl"-->
         </ul>
       </div>
     </div>
