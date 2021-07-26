@@ -6,12 +6,14 @@ use CGI qw(:all);
 my $query = new CGI();
 
 
-my @photos_file = <../htdocs/uploads/*>;
+my $photos_file = "/home/stud1034/apacheSSL/cgi-bin/photos.txt";
 my $index = 0;
+
+open(my $fh, '<', $photos_file) or die "Could not find any photos $!";
 
 print $query->header();
 
-my $count = `wc -l < @photos_file`;
+my $count = `wc -l < $photos_file`;
 chomp($count);
 if($count eq 0) {
    print "DIV CLASS='d-flex m-auto justify-content-center'>";
@@ -20,9 +22,8 @@ if($count eq 0) {
    print "</DIV>";
 }
 else {
-foreach my $i (@photos_file) {   
-    chomp($i);
-    my $p = substr($i, 9);
+while(my $p = <$fh>) {   
+    chomp($p);
     if($index % 3 == 0) {        
         print '<DIV class="grid-item">';
         print '<IMG src="';
@@ -47,11 +48,9 @@ print <<"HTML_BRIDGE";
 HTML_BRIDGE
 
 $index = 0;
-# open(my $f1, '<', $photos_file) or die "Could not find any photos $!";
-foreach my $j (@photos_file) {
-# while( my $p1 = <$f1>) {    
-    chomp($j);
-    my $p1 = substr($j, 9);
+open(my $f1, '<', $photos_file) or die "Could not find any photos $!";
+while( my $p1 = <$f1>) {
+    chomp($p1);
     if($index % 3 == 1) {        
         print '<DIV class="grid-item">';
         print '<IMG src="';
@@ -76,11 +75,9 @@ print <<"HTML_BRIDGE";
 HTML_BRIDGE
 
 $index = 0;    
-# open(my $f2, '<', $photos_file) or die "Could not find any photos $!";
-# while( my $p2 = <$f2>) {
-foreach my $k (@photos_file) {
-    chomp($k);
-    my $p2 = substr($k, 9);
+open(my $f2, '<', $photos_file) or die "Could not find any photos $!";
+while( my $p2 = <$f2>) {
+    chomp($p2);
     if($index % 3 == 2) {        
         print '<DIV class="grid-item">';
         print '<IMG src="'; 
