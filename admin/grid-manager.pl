@@ -15,7 +15,7 @@ my $index = 0;
 # chomp($count);
 my $count  = @photos_file;
 if($count eq 0) {
-   print "DIV CLASS='d-flex m-auto justify-content-center'>";
+   print "<DIV CLASS='d-flex m-auto justify-content-center'>";
    print "<H1 CLASS='DISPLAY-4'> No images pending for approval.</H1>";
    print "<H1> Check back later? </H1>";
    print "</DIV>";
