@@ -61,12 +61,13 @@ sub approveFile {
 
     if($approve eq 'true') {
         print "Approved\n<br/>";
-        moveFile($image);
+        moveFile($image);        
     }
 
     if($approve eq 'false') {
         print "Rejected\n</br>";
         removeFile($image);
+        deleteFile($image);
     }
 }
 
@@ -84,14 +85,23 @@ sub moveFile {
 
     my @t = split("/", $img);
 
-    if(-e $upload_dir . "/" . $t[1]) {
+    print $upload_dir . "/" . $t[1];
+
+    if( -e $upload_dir . "/" . $t[1]) {
         print "File moved successfully.\n";
     }
 }
 
 sub deleteFile {
     my $image = shift;
-    unlink($upload_dir . $image) or print "Failed to delete file: $!\n";
+    my @t = split("/", $image);
+
+    unlink($deleted_dir . "/" . $t[1]) or print "Failed to delete file: $!\n";
+
+    if(not -e $deleted_dir . "/" . $t[1]) {
+        print "File removed successfully.\n";
+    }
+    
 }
 
 sub removeFile {
@@ -100,13 +110,15 @@ sub removeFile {
         my $pf = substr($iter, 9);
         print $pf;
         if($pf eq $image) {
-            my $from = $home_dir . $img;
+            my $from = $home_dir . $image;
             move ($from, $deleted_dir) or print "Move failed: $!\n";
             last;
         }
     }
 
-    my @t = split("/", $img);
+    my @t = split("/", $image);
+
+    print $deleted_dir . "/" . $t[1];
 
     if(-e $deleted_dir . "/" . $t[1]) {
         print "File removed successfully.\n";
