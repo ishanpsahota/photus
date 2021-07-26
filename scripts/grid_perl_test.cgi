@@ -20,8 +20,9 @@ if($count eq 0) {
    print "</DIV>";
 }
 else {
-foreach my $p (@photos_file) {   
-    chomp($p);
+foreach my $i (@photos_file) {   
+    chomp($i);
+    my $p = substr($i, 9);
     if($index % 3 == 0) {        
         print '<DIV class="grid-item">';
         print '<IMG src="';
@@ -47,9 +48,10 @@ HTML_BRIDGE
 
 $index = 0;
 # open(my $f1, '<', $photos_file) or die "Could not find any photos $!";
-foreach my $p1 (@photos_file) {
-# while( my $p1 = <$f1>) {
-    chomp($p1);
+foreach my $j (@photos_file) {
+# while( my $p1 = <$f1>) {    
+    chomp($j);
+    my $p1 = substr($j, 9);
     if($index % 3 == 1) {        
         print '<DIV class="grid-item">';
         print '<IMG src="';
@@ -76,8 +78,9 @@ HTML_BRIDGE
 $index = 0;    
 # open(my $f2, '<', $photos_file) or die "Could not find any photos $!";
 # while( my $p2 = <$f2>) {
-foreach my $p2 (@photos_file) {
-    chomp($p2);
+foreach my $k (@photos_file) {
+    chomp($k);
+    my $p2 = substr($k, 9);
     if($index % 3 == 2) {        
         print '<DIV class="grid-item">';
         print '<IMG src="'; 
