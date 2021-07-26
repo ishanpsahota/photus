@@ -33,6 +33,10 @@
       <div class="upload-card py-5 px-3 center text-center">
         <form method="post" action="/cgi-bin/upload.cgi" enctype="multipart/form-data" id="upload-form">
           <div class="dropzone">
+            <div class="dropzone-error-overlay">
+              <span></span>
+              <button type="button">OK</button>
+            </div>
             <svg class="dropzone-icon" viewBox="0 0 40 50"><defs><linearGradient id="a" x1="13.521" y1="6.83" x2="13.521" y2="15.191" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2d93ff"/><stop offset="0.254" stop-color="#238cff"/><stop offset="1" stop-color="#0a7bff"/></linearGradient><linearGradient id="b" x1="12.372" y1="22.355" x2="12.372" y2="46.354" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#b7daff"/><stop offset="1" stop-color="#9acaff"/></linearGradient><linearGradient id="c" x1="20" y1="20.282" x2="20" y2="50" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#43a1ff"/><stop offset="1" stop-color="#2089ff"/></linearGradient></defs><rect width="40" height="50" rx="4" fill="#d2e7ff"/><circle cx="13.521" cy="11.011" r="4.181" fill="url(#a)"/><path d="M3.594,24.739,0,30.813V46.354H24.745L11.955,24.739A4.857,4.857,0,0,0,3.594,24.739Z" fill="url(#b)"/><path d="M28.007,22a4.858,4.858,0,0,0-7.418,0L0,46.352H0A3.648,3.648,0,0,0,3.648,50H36a4,4,0,0,0,4-4V36.186Z" fill="url(#c)"/></svg>
             <input id="file-input" type="file" name="image_input" accept=".jpeg,.jpg,.png"/>
             <label class="instruction" for="file-input">Drop your image here, or <span class="dropzone-link">browse</span> for it</label>

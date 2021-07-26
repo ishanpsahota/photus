@@ -1,3 +1,14 @@
+function printPrettyBytes(bytes, decimalPlaces = 2) {
+  if (bytes == 0)
+    return '0 bytes';
+
+  const kb = 1024;
+  const units = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(kb));
+
+  return parseFloat((bytes / Math.pow(kb, i)).toFixed(decimalPlaces)) + ' ' + units[i];
+}
+
 const TEMPLATE_FILE_UPLOAD_LIST_ITEM = `
   <div class="file-info">
     <div class="file-name">
@@ -15,11 +26,15 @@ class ImageUploader {
   constructor(uploadForm) {
     this.form = document.querySelector(uploadForm);
     this.dropzone = this.form.querySelectorAll(".dropzone, .dropzone-icon");
+    this.dropzoneOverlay = this.form.querySelector(".dropzone-error-overlay");
     this.list = this.form.querySelector('.file-display');
     this.input = this.form.querySelector('#file-input');
 
     this.updateDropzoneStyle = this.updateDropzoneStyle.bind(this);
     this.addFile = this.addFile.bind(this);
+
+    this.dropzoneOverlay.lastElementChild.setAttribute("onclick", 
+      "uploader.dropzone[0].classList.toggle('overlay-active')");
 
     this.eventListen();
   }
@@ -33,6 +48,9 @@ class ImageUploader {
   }
 
   updateDropzoneStyle(e) {
+    if (this.overlayActive)
+      this.toggleOverlay();
+
     const action = (e.type === "dragover" ? "add" : "remove");
     e.currentTarget.classList[action]("active");
     this.dropzone[1].classList[action]("active");
@@ -69,9 +87,19 @@ class ImageUploader {
     let sig = new ImageSignature(files[0]);
     sig.sniff(sig.maxBytesCanRead, (result) => {
       if (result == "image/jpeg" || result == "image/png") {
-        this.addToList(sig.blob);
+        const maxSize = this.maxFileSize;
+        if ((sig.blob.size) <= maxSize) {
+          this.addToList(sig.blob);
+        } else {
+          this.form.reset();
+          this.showErrorMsg(`Size of the chosen file is larger than the allowed
+            maximum of ${printPrettyBytes(maxSize, 0)}.`);
+        }
       } else {
         this.form.reset();
+        this.showErrorMsg(`Chosen file is of an unrecognized type and cannot be uploaded.<br>
+          Accepted files must be images of type <strong>JPEG</strong>, <strong>JPG</strong>, 
+          <strong>PNG</strong>.`);
         // console.log("Someone's feeling sneaky: " + sig.blob.type);
       }
     });
@@ -100,8 +128,25 @@ class ImageUploader {
       this.form.reset();
   }
 
+  toggleOverlay() {
+    this.dropzone[0].classList.toggle("overlay-active");
+  }
+
+  showErrorMsg(msg) {
+    this.dropzoneOverlay.firstElementChild.innerHTML = msg;
+    this.toggleOverlay();
+  }
+
+  get maxFileSize() {
+    return 2097152; // 2MB
+  }
+
   get listNotEmpty() {
     return this.list.children.length != 0;
+  }
+
+  get overlayActive() {
+    return this.dropzone[0].classList.contains('overlay-active');
   }
 }
 
