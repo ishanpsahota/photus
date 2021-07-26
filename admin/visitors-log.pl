@@ -5,6 +5,7 @@ use strict;
 use CGI qw(:all);
 my $query = new CGI();
 
+print "Content-type: text/html\n\n";
 
 # Open file.
 my $file = "/home/stud1034/apacheSSL/logs/access_log";
