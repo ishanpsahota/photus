@@ -3,7 +3,7 @@ function printPrettyBytes(bytes, decimalPlaces = 2) {
     return '0 bytes';
 
   const kb = 1024;
-  const units = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+  const units = ["bytes", "KB", "MB", "GB"];
   const i = Math.floor(Math.log(bytes) / Math.log(kb));
 
   return parseFloat((bytes / Math.pow(kb, i)).toFixed(decimalPlaces)) + ' ' + units[i];
