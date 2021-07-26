@@ -11,7 +11,7 @@ my $img = $query->param('image');
 
 # my $pending_file = "/home/stud1034/apacheSSL/cgi-bin/pending.txt";
 # my $photos_file = "/home/stud1034/apacheSSL/cgi-bin/photos.txt";
-my $upload_dir = "/home/stud1034/apacheSSL/htdocs/upload";
+my $upload_dir = "/home/stud1034/apacheSSL/htdocs/uploads";
 my $pending_dir = "/home/stud1034/apacheSSL/htdocs/pending";
 my $home_dir = "/home/stud1034/apacheSSL/htdocs";
 my $image_approval = $query->param('allow');
