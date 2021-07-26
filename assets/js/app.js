@@ -1,3 +1,14 @@
+function printPrettyBytes(bytes, decimalPlaces = 2) {
+  if (bytes == 0)
+    return '0 bytes';
+
+  const kb = 1024;
+  const units = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(kb));
+
+  return parseFloat((bytes / Math.pow(kb, i)).toFixed(decimalPlaces)) + ' ' + units[i];
+}
+
 const TEMPLATE_FILE_UPLOAD_LIST_ITEM = `
   <div class="file-info">
     <div class="file-name">
@@ -76,7 +87,14 @@ class ImageUploader {
     let sig = new ImageSignature(files[0]);
     sig.sniff(sig.maxBytesCanRead, (result) => {
       if (result == "image/jpeg" || result == "image/png") {
-        this.addToList(sig.blob);
+        const maxSize = this.maxFileSize;
+        if ((sig.blob.size) <= maxSize) {
+          this.addToList(sig.blob);
+        } else {
+          this.form.reset();
+          this.showErrorMsg(`Size of the chosen file is larger than the allowed
+            maximum of ${printPrettyBytes(maxSize, 0)}.`);
+        }
       } else {
         this.form.reset();
         this.showErrorMsg(`Chosen file is of an unrecognized type and cannot be uploaded.<br>
@@ -117,6 +135,10 @@ class ImageUploader {
   showErrorMsg(msg) {
     this.dropzoneOverlay.firstElementChild.innerHTML = msg;
     this.toggleOverlay();
+  }
+
+  get maxFileSize() {
+    return 2097152; // 2MB
   }
 
   get listNotEmpty() {
