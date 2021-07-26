@@ -27,7 +27,7 @@ my $p = substr($i, 9);
 print <<CARD_HTML;
 <li class="upload-manager-card">
   <div class="upload-manager-card-image" style="background-image: url($p)"></div>
-  <form action="/cgi-bin/approve.cgi" method="POST">
+  <form action="/cgi-bin/approve_test.cgi" method="POST">
     <div class="upload-manager-switch">
       <input type="radio" id="radio-approve-$index" name="allow" value="true" checked>
       <label for="radio-approve-$index">Approve<i class="fa fa-check" aria-hidden="true"></i></label>
