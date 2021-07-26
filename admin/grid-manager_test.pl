@@ -23,7 +23,7 @@ if($count eq 0) {
 else {
 foreach my $i (@photos_file) {   
 chomp($i);
-my $p = substr($i, 10);
+my $p = substr($i, 9);
 print <<CARD_HTML;
 <li class="upload-manager-card">
   <div class="upload-manager-card-image" style="background-image: url($p)"></div>

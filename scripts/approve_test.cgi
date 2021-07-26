@@ -72,7 +72,7 @@ sub approveFile {
 sub moveFile {
     my $image = shift;
     foreach my $iter (@pending_imgs) {        
-        my $pf = substr($iter, 10);
+        my $pf = substr($iter, 9);
         print $pf;
         if($pf eq $image) {
             my $from = $home_dir . $img;
