@@ -14,9 +14,10 @@ print $query->header();
 my $count = `wc -l < @photos_file`;
 chomp($count);
 if($count eq 0) {
-   print "DIV CLASS='d-flex m-auto justify-content-center'>";
+   print "<DIV CLASS='d-flex m-auto justify-content-center'>";
    print "<H1 CLASS='DISPLAY-4'> No images pending for approval.</H1>";
    print "<H1> Check back later? </H1>";
+   print "<H4> Check <A href='/admin/visitors-log.shtml'> Visitors Log </A> </H4>"
    print "</DIV>";
 }
 else {
