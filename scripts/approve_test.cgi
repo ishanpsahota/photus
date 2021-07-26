@@ -26,7 +26,7 @@ print "Content-type: text/html\n\n";
 
 if($pending_count eq 0) {
     print "No images pending for approval.\n";
-    die qq("No images pending for approval.\n")
+    die qq("No images pending for approval.\n");
 }
 
 if(not defined $img) {
@@ -83,7 +83,7 @@ sub moveFile {
 
     my @t = split("/", $img);
 
-    if(-e $upload_dir . "/" . @t[1]) {
+    if(-e $upload_dir . "/" . $t[1]) {
         print "File moved successfully.\n";
     }
 }
