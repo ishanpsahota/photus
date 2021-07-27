@@ -39,10 +39,12 @@ open ( UPLOADFILE, ">$dir/$file" ) or print "$!";
 
 while ( <$file_handle> )
 {
-print "File uploaded.\n";
+print UPLOADFILE;
 
 }
 close UPLOADFILE;
+
+print "$file\n";
 
 my @args = split("\.", $file);
 foreach my $j (@args) {
