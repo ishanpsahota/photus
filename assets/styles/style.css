@@ -283,7 +283,6 @@ ul.navbar-nav li:only-child .btn {
     border-color: #3575ba;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
-    min-width: 7rem;
 }
 
 .navbar-nav .btn-outline-primary:hover {
@@ -471,7 +470,7 @@ ul.navbar-nav li:only-child .btn {
     display: none;
     margin: 0;
     margin-top: 1.3rem;
-    padding: 1.3rem;
+    padding: .8rem 1rem;
     border: 2px solid #eef3fa;
     border-radius: 6px;
     text-align: left;
