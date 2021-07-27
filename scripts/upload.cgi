@@ -4,9 +4,11 @@ use strict;
 
 use CGI qw(:all);
 
-my $query = new CGI();
-
+my $query = CGI->new;
+use File::Copy;
 my $file = $query->param('image_input');
+
+my $newname = "";
 
 if ( !$file )
 {
@@ -33,13 +35,27 @@ die "Filename contains invalid characters"
 my $file_handle = $query->upload('image_input');
 open ( UPLOADFILE, ">$dir/$file" ) or print "$!";
 
-
 while ( <$file_handle> )
 {
-print UPLOADFILE;
-}
+print "File uploaded.\n";
 
+}
 close UPLOADFILE;
+
+my @args = split("\.", $file);
+my $file_original_name = $args[0];
+my $file_ext = $args[1];
+my $random_string = `(date +'%Y%m%d_%H%M%S_' && openssl rand -hex 2) | tr -d '\n'`;
+
+my $newname = $random_string . "." . $file_ext;
+
+move ("$dir/$file", "$dir/$newname") or print "Save error: $!\n";
+
+open (NFILE, ">$dir/$newname") or print "$!\n";
+
+if(-e "$dir/$newname") { 
+    print "Process successful. ";
+ }
 
 close($file_handle);                                       
 print $query->header ( );
