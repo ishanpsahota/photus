@@ -30,7 +30,7 @@ $file = $1;
 }
 else
 {
-die "Filename contains invalid characters"
+print "Filename contains invalid characters";
 }
 
 
@@ -44,25 +44,25 @@ print UPLOADFILE;
 }
 close UPLOADFILE;
 
-print "$file\n";
+#print "$file\n";
 
-my @args = split("\.", $file);
-foreach my $j (@args) {
-    print "$j\n";
-}
-# my $file_original_name = $args[0];
-# my $file_ext = $args[1];
-# my $random_string = `(date +'%Y%m%d_%H%M%S_' && openssl rand -hex 2) | tr -d '\n'`;
+my @args = split /\./, $file;
+#foreach my $j (@args) {
+ #   print "$j\n";
+#}
+my $file_original_name = $args[0];
+my $file_ext = $args[1];
+my $random_string = `(date +'%Y%m%d_%H%M%S_' && openssl rand -hex 2) | tr -d '\n'`;
 
-# my $newname = $random_string . "." . $file_ext;
+ my $newname = $random_string . "." . $file_ext;
 
-# move ("$dir/$file", "$dir/$newname") or print "Save error: $!\n";
+move ("$dir/$file", "$dir/$newname") or print "Save error: $!\n";
 
 # open (NFILE, ">$dir/$newname") or print "$!\n";
 
-# if(-e "$dir/$newname") { 
-#     print "Process successful. ";
-#  }
+ if(-e "$dir/$newname") { 
+     print "Process successful. ";
+  }
 
 close($file_handle);                                       
 print $query->header ( );
