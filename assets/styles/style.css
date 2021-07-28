@@ -864,6 +864,35 @@ ul.navbar-nav li:only-child .btn {
 }
 
 
+/* FULL PAGE BANNER MESSAGE
+------------------------------------------------------------------------------*/
+.full-page-banner-message {
+    text-align: center;
+}
+
+.full-page-banner-message .icon {
+    margin-bottom: .4rem;
+}
+
+.full-page-banner-message i.fas,
+.full-page-banner-message i.far {
+    font-size: 1.8rem;
+    padding-bottom: .4rem;
+}
+
+.full-page-banner-message h3, h4, h5 {
+    color: #1f1f1f;
+    margin-bottom: .3rem;
+    font-weight: bold;
+}
+
+.full-page-banner-message p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    color: #2e4354;
+}
+
+
 /* Media Queries
 ------------------------------------------------------------------------------*/
 @media screen and (min-width: 677px) {
