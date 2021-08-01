@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
     <link rel="stylesheet" href="/assets/styles/style.css">
   </head>
   <body>
@@ -35,13 +35,8 @@
           </ul>
         </nav>
       </div>
-      <div class="main-wrapper row">
-        <div class="grid-container">
-          <div class="grid-inner">
-            <!--#include virtual="/cgi-bin/grid-generator.cgi"-->
-          </div>
-        </div>
-      </div>
+      <!--#include virtual="/cgi-bin/grid-generator.pl"-->
+      <!--
       <div class="footer-wrapper row text-center text-md-left d-flex flex-column flex-md-row">
         <ul class="list-group list-group-horizontal m-auto">
           <li class="list-group-item">Ishan Prasad</li>
@@ -49,6 +44,7 @@
           <li class="list-group-item">Simran Kaur</li>
         </ul>
       </div>
+      -->
     </div>
   </body>
 </html>

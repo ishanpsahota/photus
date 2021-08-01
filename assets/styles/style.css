@@ -15,6 +15,10 @@ body {
     background-color: #f0f2f7;
 }
 
+code {
+    color: #c56c95;
+}
+
 /* Accessibility? Lol, cry me a river */
 button:focus { outline: 0; }
 
@@ -861,6 +865,41 @@ ul.navbar-nav li:only-child .btn {
     border: 0;
     background-color: #fff;
     color: #454545;
+}
+
+
+/* FULL PAGE BANNER MESSAGE
+------------------------------------------------------------------------------*/
+.full-page-banner-message {
+    text-align: center;
+}
+
+.full-page-banner-message .icon {
+    margin-bottom: .4rem;
+}
+
+.full-page-banner-message i.fas,
+.full-page-banner-message i.far {
+    font-size: 1.8rem;
+    padding-bottom: .4rem;
+}
+
+.full-page-banner-message h3, h4, h5 {
+    color: #1f1f1f;
+    margin-bottom: .3rem;
+    font-weight: bold;
+}
+
+.full-page-banner-message p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    color: #2e4354;
+}
+
+.full-page-banner-message a {
+    color: #175fd6;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 
