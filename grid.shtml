@@ -35,13 +35,8 @@
           </ul>
         </nav>
       </div>
-      <div class="main-wrapper row">
-        <div class="grid-container">
-          <div class="grid-inner">
-            <!--#include virtual="/cgi-bin/grid-generator.cgi"-->
-          </div>
-        </div>
-      </div>
+      <!--#include virtual="/cgi-bin/grid-generator.pl"-->
+      <!--
       <div class="footer-wrapper row text-center text-md-left d-flex flex-column flex-md-row">
         <ul class="list-group list-group-horizontal m-auto">
           <li class="list-group-item">Ishan Prasad</li>
@@ -49,6 +44,7 @@
           <li class="list-group-item">Simran Kaur</li>
         </ul>
       </div>
+      -->
     </div>
   </body>
 </html>

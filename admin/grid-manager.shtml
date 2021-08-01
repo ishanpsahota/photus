@@ -31,11 +31,7 @@
           </ul>
         </nav>
       </div>
-      <div class="main-wrapper text-center">
-        <ul class="upload-manager-card-list">
-          <!--#include virtual="/cgi-bin/grid-manager.pl"-->
-        </ul>
-      </div>
+      <!--#include virtual="/cgi-bin/grid-manager.pl"-->
     </div>
   </body>
 </html>

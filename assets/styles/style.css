@@ -15,6 +15,10 @@ body {
     background-color: #f0f2f7;
 }
 
+code {
+    color: #c56c95;
+}
+
 /* Accessibility? Lol, cry me a river */
 button:focus { outline: 0; }
 
@@ -890,6 +894,12 @@ ul.navbar-nav li:only-child .btn {
     font-size: 1.2rem;
     margin-bottom: 0;
     color: #2e4354;
+}
+
+.full-page-banner-message a {
+    color: #175fd6;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 
